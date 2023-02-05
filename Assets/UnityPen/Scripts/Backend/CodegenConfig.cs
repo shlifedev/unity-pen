@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Puerts;
 using UnityEngine;
-
+#if UNITY_EDITOR
 [Configure]
 public class ExamplesCfg
 {
@@ -24,3 +24,4 @@ public class ExamplesCfg
         }
     }
 }
+#endif
