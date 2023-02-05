@@ -12,7 +12,3 @@ Test And Share Your Unity Idea Use Unity Pen.
 
 ### Reference
 [Purets WebGL Demo](https://github.com/zombieyang/puerts_unity_webgl_demo)
-구현 필요 
- js 글로벌객체(window) 등에 바인딩할 수 있으면 아예 코드펜처럼 운영해봐도 나쁘지 않을듯?
- 
- 
