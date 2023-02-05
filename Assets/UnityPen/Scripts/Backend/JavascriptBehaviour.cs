@@ -21,6 +21,7 @@ namespace UnityPen.Scripts
             if (init != null)
                 init(this);  // js -> C# binding
             
+            
         }
 
         private void Start()

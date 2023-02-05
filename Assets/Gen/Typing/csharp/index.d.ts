@@ -2604,6 +2604,7 @@
         class JavascriptBehaviour extends UnityEngine.MonoBehaviour
         {
             protected [__keep_incompatibility]: never;
+            public fileName : string
             public JsStart : System.Action
             public JsUpdate : System.Action
             public JsOnDestroy : System.Action

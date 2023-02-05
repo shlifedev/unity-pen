@@ -17,6 +17,7 @@ public class ExamplesCfg
             {
                 typeof(Debug), 
                 typeof(Vector3),
+                typeof(Quaternion), 
                 typeof(List<int>),
                 typeof(Dictionary<string, List<int>>),
                 typeof(Time),
@@ -36,6 +37,7 @@ public class ExamplesCfg
                 typeof(JavascriptBehaviour), 
                 typeof(UnityEngine.EventSystems.UIBehaviour), 
                 typeof(UnityEngine.UI.Selectable),
+                typeof(UnityEngine.UI.Image),
                 typeof(UnityEngine.UI.Button),
                 typeof(UnityEngine.UI.Button.ButtonClickedEvent),
                 typeof(UnityEngine.Events.UnityEvent),
@@ -47,16 +49,20 @@ public class ExamplesCfg
         }
     }
     
+    /// <summary>
+    /// 이곳에 구조체를 등록하면 GC 최적화가 가능하다.
+    /// 다만 unsafe 키워드를 사용해야하므로 상황에따라 사용하지 않을 수 있음.
+    /// </summary>
     [BlittableCopy]
     static IEnumerable<Type> Blittables
     {
         get
         {
             return new List<Type>()
-            {
-                //打开这个可以优化Vector3的GC，但需要开启unsafe编译
-                //typeof(Vector3),
-            };
+            { 
+                typeof(Vector3),
+                typeof(Quaternion)
+            }; 
         }
     }
     

@@ -11,7 +11,7 @@ namespace PuertsStaticWrap
                 
             jsEnv.AddLazyStaticWrapLoader(typeof(UnityEngine.Vector3), UnityEngine_Vector3_Wrap.GetRegisterInfo);
                 
-                
+                UnityEngine_Vector3_Wrap.InitBlittableCopy(jsEnv);
             jsEnv.AddLazyStaticWrapLoader(typeof(System.Collections.Generic.List<int>), System_Collections_Generic_List_1_System_Int32__Wrap.GetRegisterInfo);
                 
                 

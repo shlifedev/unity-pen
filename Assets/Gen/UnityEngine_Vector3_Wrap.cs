@@ -7,9 +7,11 @@ namespace PuertsStaticWrap
     public static class UnityEngine_Vector3_Wrap 
     {
     
+        static UnityEngine.Vector3 HeapValue;
+    
     
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8ConstructorCallback))]
-        private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
+        unsafe private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
         {
             try
             {
@@ -45,12 +47,15 @@ namespace PuertsStaticWrap
                     
                         float arg2 = (float)PuertsDLL.GetNumberFromValue(isolate, v8Value2, false);
                     
-                        var result = new UnityEngine.Vector3(arg0, arg1, arg2);
+                        HeapValue = new UnityEngine.Vector3(arg0, arg1, arg2);
 
                     
 
                     
-                        return Puerts.Utils.GetObjectPtr((int)data, typeof(UnityEngine.Vector3), result);
+                        fixed (UnityEngine.Vector3* result = &HeapValue)
+                        {
+                            return new IntPtr(result);
+                        }
                     
                     }
                     
@@ -80,12 +85,15 @@ namespace PuertsStaticWrap
                     
                         float arg1 = (float)PuertsDLL.GetNumberFromValue(isolate, v8Value1, false);
                     
-                        var result = new UnityEngine.Vector3(arg0, arg1);
+                        HeapValue = new UnityEngine.Vector3(arg0, arg1);
 
                     
 
                     
-                        return Puerts.Utils.GetObjectPtr((int)data, typeof(UnityEngine.Vector3), result);
+                        fixed (UnityEngine.Vector3* result = &HeapValue)
+                        {
+                            return new IntPtr(result);
+                        }
                     
                     }
                     
@@ -101,12 +109,15 @@ namespace PuertsStaticWrap
 
                     {
                     
-                        var result = new UnityEngine.Vector3();
+                        HeapValue = new UnityEngine.Vector3();
 
                     
 
                     
-                        return Puerts.Utils.GetObjectPtr((int)data, typeof(UnityEngine.Vector3), result);
+                        fixed (UnityEngine.Vector3* result = &HeapValue)
+                        {
+                            return new IntPtr(result);
+                        }
                     
                     }
                     
@@ -804,11 +815,11 @@ namespace PuertsStaticWrap
         }
     
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void M_Set(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void M_Set(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Vector3*)self;
         
         
                 {
@@ -837,7 +848,7 @@ namespace PuertsStaticWrap
                         float arg2 = (float)PuertsDLL.GetNumberFromValue(isolate, v8Value2, false);
                     
 
-                        obj.Set (arg0, arg1, arg2);
+                        (*obj).Set (arg0, arg1, arg2);
 
                     
                         
@@ -847,7 +858,7 @@ namespace PuertsStaticWrap
                         
                     
                         
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         
                     }
                 
@@ -912,11 +923,11 @@ namespace PuertsStaticWrap
         }
     
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void M_Scale(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void M_Scale(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Vector3*)self;
         
         
                 {
@@ -933,13 +944,13 @@ namespace PuertsStaticWrap
                         argobj0 = argobj0 != null ? argobj0 : StaticTranslate<UnityEngine.Vector3>.Get((int)data, isolate, NativeValueApi.GetValueFromArgument, v8Value0, false); UnityEngine.Vector3 arg0 = (UnityEngine.Vector3)argobj0;
                     
 
-                        obj.Scale (arg0);
+                        (*obj).Scale (arg0);
 
                     
                         
                     
                         
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         
                     }
                 
@@ -1004,11 +1015,11 @@ namespace PuertsStaticWrap
         }
     
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void M_GetHashCode(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void M_GetHashCode(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Vector3*)self;
         
         
                 if (paramLen == 0)
@@ -1021,11 +1032,11 @@ namespace PuertsStaticWrap
                     {
                     
 
-                        var result = obj.GetHashCode ();
+                        var result = (*obj).GetHashCode ();
 
                     
                         Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         return;
                     }
                 
@@ -1042,11 +1053,11 @@ namespace PuertsStaticWrap
         }
     
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void M_Equals(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void M_Equals(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Vector3*)self;
         
         
                 if (paramLen == 1)
@@ -1067,13 +1078,13 @@ namespace PuertsStaticWrap
                         argobj0 = argobj0 != null ? argobj0 : StaticTranslate<System.Object>.Get((int)data, isolate, NativeValueApi.GetValueFromArgument, v8Value0, false); System.Object arg0 = (System.Object)argobj0;
                     
 
-                        var result = obj.Equals (arg0);
+                        var result = (*obj).Equals (arg0);
 
                     
                         
                     
                         Puerts.PuertsDLL.ReturnBoolean(isolate, info, result);
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         return;
                     }
                 
@@ -1085,13 +1096,13 @@ namespace PuertsStaticWrap
                         argobj0 = argobj0 != null ? argobj0 : StaticTranslate<UnityEngine.Vector3>.Get((int)data, isolate, NativeValueApi.GetValueFromArgument, v8Value0, false); UnityEngine.Vector3 arg0 = (UnityEngine.Vector3)argobj0;
                     
 
-                        var result = obj.Equals (arg0);
+                        var result = (*obj).Equals (arg0);
 
                     
                         
                     
                         Puerts.PuertsDLL.ReturnBoolean(isolate, info, result);
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         return;
                     }
                 
@@ -1200,11 +1211,11 @@ namespace PuertsStaticWrap
         }
     
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void M_Normalize(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void M_Normalize(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Vector3*)self;
         
         
                 {
@@ -1215,11 +1226,11 @@ namespace PuertsStaticWrap
                     {
                     
 
-                        obj.Normalize ();
+                        (*obj).Normalize ();
 
                     
                         
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         
                     }
                 
@@ -1776,11 +1787,11 @@ namespace PuertsStaticWrap
         }
     
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void M_ToString(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void M_ToString(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Vector3*)self;
         
         
                 if (paramLen == 0)
@@ -1793,11 +1804,11 @@ namespace PuertsStaticWrap
                     {
                     
 
-                        var result = obj.ToString ();
+                        var result = (*obj).ToString ();
 
                     
                         Puerts.PuertsDLL.ReturnString(isolate, info, result);
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         return;
                     }
                 
@@ -1821,13 +1832,13 @@ namespace PuertsStaticWrap
                         string arg0 = (string)PuertsDLL.GetStringFromValue(isolate, v8Value0, false);
                     
 
-                        var result = obj.ToString (arg0);
+                        var result = (*obj).ToString (arg0);
 
                     
                         
                     
                         Puerts.PuertsDLL.ReturnString(isolate, info, result);
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         return;
                     }
                 
@@ -1857,7 +1868,7 @@ namespace PuertsStaticWrap
                         argobj1 = argobj1 != null ? argobj1 : StaticTranslate<System.IFormatProvider>.Get((int)data, isolate, NativeValueApi.GetValueFromArgument, v8Value1, false); System.IFormatProvider arg1 = (System.IFormatProvider)argobj1;
                     
 
-                        var result = obj.ToString (arg0, arg1);
+                        var result = (*obj).ToString (arg0, arg1);
 
                     
                         
@@ -1865,7 +1876,7 @@ namespace PuertsStaticWrap
                         
                     
                         Puerts.PuertsDLL.ReturnString(isolate, info, result);
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         return;
                     }
                 
@@ -1886,12 +1897,12 @@ namespace PuertsStaticWrap
     // ==================== properties start ====================
     
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_normalized(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void G_normalized(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
-                var result = obj.normalized;
+                var obj = (UnityEngine.Vector3*)self;
+                var result = (*obj).normalized;
                 Puerts.ResultHelper.Set((int)data, isolate, info, result);
             }
             catch (Exception e)
@@ -1901,12 +1912,12 @@ namespace PuertsStaticWrap
         }
             
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_magnitude(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void G_magnitude(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
-                var result = obj.magnitude;
+                var obj = (UnityEngine.Vector3*)self;
+                var result = (*obj).magnitude;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
             catch (Exception e)
@@ -1916,12 +1927,12 @@ namespace PuertsStaticWrap
         }
             
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_sqrMagnitude(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void G_sqrMagnitude(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
-                var result = obj.sqrMagnitude;
+                var obj = (UnityEngine.Vector3*)self;
+                var result = (*obj).sqrMagnitude;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
             catch (Exception e)
@@ -2111,12 +2122,12 @@ namespace PuertsStaticWrap
         }
             
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_x(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void G_x(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
-                var result = obj.x;
+                var obj = (UnityEngine.Vector3*)self;
+                var result = (*obj).x;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
             catch (Exception e)
@@ -2126,16 +2137,16 @@ namespace PuertsStaticWrap
         }
             
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void S_x(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void S_x(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Vector3*)self;
                 IntPtr v8Value0 = PuertsDLL.GetArgumentValue(info, 0);
                 object argobj0 = null;
                 float arg0 = (float)PuertsDLL.GetNumberFromValue(isolate, v8Value0, false);
-                obj.x = arg0;
-                Puerts.Utils.SetSelf((int)data, self, obj);
+                (*obj).x = arg0;
+                
             }
             catch (Exception e)
             {
@@ -2144,12 +2155,12 @@ namespace PuertsStaticWrap
         }
             
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_y(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void G_y(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
-                var result = obj.y;
+                var obj = (UnityEngine.Vector3*)self;
+                var result = (*obj).y;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
             catch (Exception e)
@@ -2159,16 +2170,16 @@ namespace PuertsStaticWrap
         }
             
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void S_y(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void S_y(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Vector3*)self;
                 IntPtr v8Value0 = PuertsDLL.GetArgumentValue(info, 0);
                 object argobj0 = null;
                 float arg0 = (float)PuertsDLL.GetNumberFromValue(isolate, v8Value0, false);
-                obj.y = arg0;
-                Puerts.Utils.SetSelf((int)data, self, obj);
+                (*obj).y = arg0;
+                
             }
             catch (Exception e)
             {
@@ -2177,12 +2188,12 @@ namespace PuertsStaticWrap
         }
             
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_z(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void G_z(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
-                var result = obj.z;
+                var obj = (UnityEngine.Vector3*)self;
+                var result = (*obj).z;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
             catch (Exception e)
@@ -2192,16 +2203,16 @@ namespace PuertsStaticWrap
         }
             
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void S_z(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void S_z(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Vector3*)self;
                 IntPtr v8Value0 = PuertsDLL.GetArgumentValue(info, 0);
                 object argobj0 = null;
                 float arg0 = (float)PuertsDLL.GetNumberFromValue(isolate, v8Value0, false);
-                obj.z = arg0;
-                Puerts.Utils.SetSelf((int)data, self, obj);
+                (*obj).z = arg0;
+                
             }
             catch (Exception e)
             {
@@ -2213,11 +2224,11 @@ namespace PuertsStaticWrap
     // ==================== array item get/set start ====================
     
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void GetItem(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void GetItem(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Vector3*)self;
                 IntPtr v8Value0 = PuertsDLL.GetArgumentValue(info, 0);
                 object argobj0 = null;
                 JsValueType argType0 = JsValueType.Invalid;
@@ -2225,7 +2236,7 @@ namespace PuertsStaticWrap
                 if (ArgHelper.IsMatch((int)data, isolate, Puerts.JsValueType.Number, typeof(int), false, false, v8Value0, ref argobj0, ref argType0))
                 {
                     int arg0 = (int)PuertsDLL.GetNumberFromValue(isolate, v8Value0, false);
-                    var result = obj[arg0];
+                    var result = (*obj)[arg0];
                     Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
                     return;
                 }
@@ -2239,11 +2250,11 @@ namespace PuertsStaticWrap
         
     
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void SetItem(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void SetItem(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Vector3)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Vector3*)self;
                 IntPtr v8Value0 = PuertsDLL.GetArgumentValue(info, 0);
                 object argobj0 = null;
                 JsValueType argType0 = JsValueType.Invalid;
@@ -2257,7 +2268,7 @@ namespace PuertsStaticWrap
                     object argobj1 = null;
                     float arg1 = (float)PuertsDLL.GetNumberFromValue(isolate, v8Value1, false);
 
-                    obj[arg0] = arg1;
+                    (*obj)[arg0] = arg1;
                     return;
                 }
             }
@@ -2581,7 +2592,7 @@ namespace PuertsStaticWrap
         {
             return new Puerts.TypeRegisterInfo()
             {
-                BlittableCopy = false,
+                BlittableCopy = true,
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {   
@@ -2680,5 +2691,33 @@ namespace PuertsStaticWrap
             };
         }
     
+        unsafe private static UnityEngine.Vector3 StaticGetter(int jsEnvIdx, IntPtr isolate, Puerts.IGetValueFromJs getValueApi, IntPtr value, bool isByRef)
+        {
+            UnityEngine.Vector3* result = (UnityEngine.Vector3*)getValueApi.GetNativeObject(isolate, value, isByRef);
+            return result == null ? default(UnityEngine.Vector3) : *result;
+        }
+
+        unsafe private static void StaticSetter(int jsEnvIdx, IntPtr isolate, Puerts.ISetValueToJs setValueApi, IntPtr value, UnityEngine.Vector3 val)
+        {
+            HeapValue = val;
+            fixed (UnityEngine.Vector3* result = &HeapValue)
+            {
+                var typeId = Puerts.JsEnv.jsEnvs[jsEnvIdx].GetTypeId(typeof(UnityEngine.Vector3));
+                setValueApi.SetNativeObject(isolate, value, typeId, new IntPtr(result));
+            }
+        }
+
+        public static void InitBlittableCopy(Puerts.JsEnv jsEnv)
+        {
+            Puerts.StaticTranslate<UnityEngine.Vector3>.ReplaceDefault(StaticSetter, StaticGetter);
+            jsEnv.RegisterGeneralGetSet(typeof(UnityEngine.Vector3), (int jsEnvIdx, IntPtr isolate, Puerts.IGetValueFromJs getValueApi, IntPtr value, bool isByRef) =>
+            {
+                return StaticGetter(jsEnvIdx, isolate, getValueApi, value, isByRef);
+            }, (int jsEnvIdx, IntPtr isolate, Puerts.ISetValueToJs setValueApi, IntPtr value, object obj) => 
+            {
+                StaticSetter(jsEnvIdx, isolate, setValueApi, value, (UnityEngine.Vector3)obj);
+            });
+        }
+        
     }
 }

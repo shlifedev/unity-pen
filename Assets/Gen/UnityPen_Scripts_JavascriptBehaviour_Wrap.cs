@@ -50,6 +50,39 @@ namespace PuertsStaticWrap
     // ==================== properties start ====================
     
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void G_fileName(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                var obj = Puerts.Utils.GetSelf((int)data, self) as UnityPen.Scripts.JavascriptBehaviour;
+                var result = obj.fileName;
+                Puerts.PuertsDLL.ReturnString(isolate, info, result);
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+            
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void S_fileName(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                var obj = Puerts.Utils.GetSelf((int)data, self) as UnityPen.Scripts.JavascriptBehaviour;
+                IntPtr v8Value0 = PuertsDLL.GetArgumentValue(info, 0);
+                object argobj0 = null;
+                string arg0 = (string)PuertsDLL.GetStringFromValue(isolate, v8Value0, false);
+                obj.fileName = arg0;
+                
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+            
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_JsStart(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
@@ -172,6 +205,8 @@ namespace PuertsStaticWrap
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
                     
+                    {"fileName", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_fileName, Setter = S_fileName} },
+
                     {"JsStart", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_JsStart, Setter = S_JsStart} },
 
                     {"JsUpdate", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_JsUpdate, Setter = S_JsUpdate} },
