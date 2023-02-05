@@ -19,9 +19,7 @@ namespace UnityPen.Scripts
             // 파일을 불러온후 export된 init함수를 가져와 호출한다.
             var init = env.ExecuteModule<ModuleInit>(fileName, "init");
             if (init != null)
-                init(this);  // js -> C# binding
-            
-            
+                init(this);  // js -> C# binding 
         }
 
         private void Start()

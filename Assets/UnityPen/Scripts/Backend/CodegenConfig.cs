@@ -30,6 +30,7 @@ public class ExamplesCfg
                 typeof(System.Array),
                 typeof(Type),
                 typeof(ParticleSystem),
+                typeof(Mathf),
                 typeof(Canvas),
                 typeof(RenderMode),
                 typeof(Behaviour),

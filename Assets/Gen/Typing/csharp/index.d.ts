@@ -425,6 +425,10 @@
         {
             protected [__keep_incompatibility]: never;
         }
+        class UInt16 extends System.ValueType implements System.IFormattable, System.ISpanFormattable, System.IComparable, System.IComparable$1<number>, System.IConvertible, System.IEquatable$1<number>
+        {
+            protected [__keep_incompatibility]: never;
+        }
         interface Action
         { 
         () : void; 
@@ -1006,6 +1010,135 @@
         */
         enum LogOption
         { None = 0, NoStacktrace = 1 }
+        /** Quaternions are used to represent rotations.
+        */
+        class Quaternion extends System.ValueType implements System.IFormattable, System.IEquatable$1<UnityEngine.Quaternion>
+        {
+            protected [__keep_incompatibility]: never;
+            /** X component of the Quaternion. Don't modify this directly unless you know quaternions inside out.
+            */
+            public x : number
+            /** Y component of the Quaternion. Don't modify this directly unless you know quaternions inside out.
+            */
+            public y : number
+            /** Z component of the Quaternion. Don't modify this directly unless you know quaternions inside out.
+            */
+            public z : number
+            /** W component of the Quaternion. Do not directly modify quaternions.
+            */
+            public w : number
+            public static kEpsilon : number
+            /** The identity rotation (Read Only).
+            */
+            public static get identity(): UnityEngine.Quaternion;
+            /** Returns or sets the euler angle representation of the rotation.
+            */
+            public get eulerAngles(): UnityEngine.Vector3;
+            public set eulerAngles(value: UnityEngine.Vector3);
+            /** Returns this quaternion with a magnitude of 1 (Read Only).
+            */
+            public get normalized(): UnityEngine.Quaternion;
+            /** Creates a rotation which rotates from fromDirection to toDirection.
+            */
+            public static FromToRotation ($fromDirection: UnityEngine.Vector3, $toDirection: UnityEngine.Vector3) : UnityEngine.Quaternion
+            /** Returns the Inverse of rotation.
+            */
+            public static Inverse ($rotation: UnityEngine.Quaternion) : UnityEngine.Quaternion
+            /** Spherically interpolates between quaternions a and b by ratio t. The parameter t is clamped to the range [0, 1].
+            * @param a Start value, returned when t = 0.
+            * @param b End value, returned when t = 1.
+            * @param t Interpolation ratio.
+            * @returns A quaternion spherically interpolated between quaternions a and b. 
+            */
+            public static Slerp ($a: UnityEngine.Quaternion, $b: UnityEngine.Quaternion, $t: number) : UnityEngine.Quaternion
+            /** Spherically interpolates between a and b by t. The parameter t is not clamped.
+            */
+            public static SlerpUnclamped ($a: UnityEngine.Quaternion, $b: UnityEngine.Quaternion, $t: number) : UnityEngine.Quaternion
+            /** Interpolates between a and b by t and normalizes the result afterwards. The parameter t is clamped to the range [0, 1].
+            * @param a Start value, returned when t = 0.
+            * @param b End value, returned when t = 1.
+            * @param t Interpolation ratio.
+            * @returns A quaternion interpolated between quaternions a and b. 
+            */
+            public static Lerp ($a: UnityEngine.Quaternion, $b: UnityEngine.Quaternion, $t: number) : UnityEngine.Quaternion
+            /** Interpolates between a and b by t and normalizes the result afterwards. The parameter t is not clamped.
+            */
+            public static LerpUnclamped ($a: UnityEngine.Quaternion, $b: UnityEngine.Quaternion, $t: number) : UnityEngine.Quaternion
+            /** Creates a rotation which rotates angle degrees around axis.
+            */
+            public static AngleAxis ($angle: number, $axis: UnityEngine.Vector3) : UnityEngine.Quaternion
+            /** Creates a rotation with the specified forward and upwards directions.
+            * @param forward The direction to look in.
+            * @param upwards The vector that defines in which direction up is.
+            */
+            public static LookRotation ($forward: UnityEngine.Vector3, $upwards: UnityEngine.Vector3) : UnityEngine.Quaternion
+            /** Creates a rotation with the specified forward and upwards directions.
+            * @param forward The direction to look in.
+            * @param upwards The vector that defines in which direction up is.
+            */
+            public static LookRotation ($forward: UnityEngine.Vector3) : UnityEngine.Quaternion
+            public get_Item ($index: number) : number
+            public set_Item ($index: number, $value: number) : void
+            /** Set x, y, z and w components of an existing Quaternion.
+            */
+            public Set ($newX: number, $newY: number, $newZ: number, $newW: number) : void
+            public static op_Multiply ($lhs: UnityEngine.Quaternion, $rhs: UnityEngine.Quaternion) : UnityEngine.Quaternion
+            public static op_Multiply ($rotation: UnityEngine.Quaternion, $point: UnityEngine.Vector3) : UnityEngine.Vector3
+            public static op_Equality ($lhs: UnityEngine.Quaternion, $rhs: UnityEngine.Quaternion) : boolean
+            public static op_Inequality ($lhs: UnityEngine.Quaternion, $rhs: UnityEngine.Quaternion) : boolean
+            /** The dot product between two rotations.
+            */
+            public static Dot ($a: UnityEngine.Quaternion, $b: UnityEngine.Quaternion) : number
+            /** Creates a rotation with the specified forward and upwards directions.
+            * @param view The direction to look in.
+            * @param up The vector that defines in which direction up is.
+            */
+            public SetLookRotation ($view: UnityEngine.Vector3) : void
+            /** Creates a rotation with the specified forward and upwards directions.
+            * @param view The direction to look in.
+            * @param up The vector that defines in which direction up is.
+            */
+            public SetLookRotation ($view: UnityEngine.Vector3, $up: UnityEngine.Vector3) : void
+            /** Returns the angle in degrees between two rotations a and b.
+            */
+            public static Angle ($a: UnityEngine.Quaternion, $b: UnityEngine.Quaternion) : number
+            /** Returns a rotation that rotates z degrees around the z axis, x degrees around the x axis, and y degrees around the y axis; applied in that order.
+            */
+            public static Euler ($x: number, $y: number, $z: number) : UnityEngine.Quaternion
+            /** Returns a rotation that rotates z degrees around the z axis, x degrees around the x axis, and y degrees around the y axis.
+            */
+            public static Euler ($euler: UnityEngine.Vector3) : UnityEngine.Quaternion
+            /** Converts a rotation to angle-axis representation (angles in degrees).
+            */
+            public ToAngleAxis ($angle: $Ref<number>, $axis: $Ref<UnityEngine.Vector3>) : void
+            /** Creates a rotation which rotates from fromDirection to toDirection.
+            */
+            public SetFromToRotation ($fromDirection: UnityEngine.Vector3, $toDirection: UnityEngine.Vector3) : void
+            /** Rotates a rotation from towards to.
+            */
+            public static RotateTowards ($from: UnityEngine.Quaternion, $to: UnityEngine.Quaternion, $maxDegreesDelta: number) : UnityEngine.Quaternion
+            /** Converts this quaternion to one with the same orientation but with a magnitude of 1.
+            */
+            public static Normalize ($q: UnityEngine.Quaternion) : UnityEngine.Quaternion
+            public Normalize () : void
+            public Equals ($other: any) : boolean
+            public Equals ($other: UnityEngine.Quaternion) : boolean
+            public ToString () : string
+            /** Returns a formatted string for this quaternion.
+            * @param format A numeric format string.
+            * @param formatProvider An object that specifies culture-specific formatting.
+            */
+            public ToString ($format: string) : string
+            /** Returns a formatted string for this quaternion.
+            * @param format A numeric format string.
+            * @param formatProvider An object that specifies culture-specific formatting.
+            */
+            public ToString ($format: string, $formatProvider: System.IFormatProvider) : string
+            public constructor ($x: number, $y: number, $z: number, $w: number)
+            public Equals ($obj: any) : boolean
+            public static Equals ($objA: any, $objB: any) : boolean
+            public constructor ()
+        }
         /** Provides an interface to get time information from Unity.
         */
         class Time extends System.Object
@@ -1473,12 +1606,6 @@
             */
             public GetChild ($index: number) : UnityEngine.Transform
         }
-        /** Quaternions are used to represent rotations.
-        */
-        class Quaternion extends System.ValueType implements System.IFormattable, System.IEquatable$1<UnityEngine.Quaternion>
-        {
-            protected [__keep_incompatibility]: never;
-        }
         /** A standard 4x4 transformation matrix.
         */
         class Matrix4x4 extends System.ValueType implements System.IFormattable, System.IEquatable$1<UnityEngine.Matrix4x4>
@@ -1904,6 +2031,261 @@
         */
         enum ParticleSystemStopBehavior
         { StopEmittingAndClear = 0, StopEmitting = 1 }
+        /** A collection of common math functions.
+        */
+        class Mathf extends System.ValueType
+        {
+            protected [__keep_incompatibility]: never;
+            /** The well-known 3.14159265358979... value (Read Only).
+            */
+            public static PI : number
+            /** A representation of positive infinity (Read Only).
+            */
+            public static Infinity : number
+            /** A representation of negative infinity (Read Only).
+            */
+            public static NegativeInfinity : number
+            /** Degrees-to-radians conversion constant (Read Only).
+            */
+            public static Deg2Rad : number
+            /** Radians-to-degrees conversion constant (Read Only).
+            */
+            public static Rad2Deg : number
+            /** A tiny floating point value (Read Only).
+            */
+            public static Epsilon : number
+            /** Returns the closest power of two value.
+            */
+            public static ClosestPowerOfTwo ($value: number) : number
+            /** Returns true if the value is power of two.
+            */
+            public static IsPowerOfTwo ($value: number) : boolean
+            /** Returns the next power of two that is equal to, or greater than, the argument.
+            */
+            public static NextPowerOfTwo ($value: number) : number
+            /** Converts the given value from gamma (sRGB) to linear color space.
+            */
+            public static GammaToLinearSpace ($value: number) : number
+            /** Converts the given value from linear to gamma (sRGB) color space.
+            */
+            public static LinearToGammaSpace ($value: number) : number
+            /** Convert a color temperature in Kelvin to RGB color.
+            * @param kelvin Temperature in Kelvin. Range 1000 to 40000 Kelvin.
+            * @returns Correlated Color Temperature as floating point RGB color. 
+            */
+            public static CorrelatedColorTemperatureToRGB ($kelvin: number) : UnityEngine.Color
+            /** Encode a floating point value into a 16-bit representation.
+            * @param val The floating point value to convert.
+            * @returns The converted half-precision float, stored in a 16-bit unsigned integer. 
+            */
+            public static FloatToHalf ($val: number) : number
+            /** Convert a half precision float to a 32-bit floating point value.
+            * @param val The half precision value to convert.
+            * @returns The decoded 32-bit float. 
+            */
+            public static HalfToFloat ($val: number) : number
+            /** Generate 2D Perlin noise.
+            * @param x X-coordinate of sample point.
+            * @param y Y-coordinate of sample point.
+            * @returns Value between 0.0 and 1.0. (Return value might be slightly below 0.0 or beyond 1.0.) 
+            */
+            public static PerlinNoise ($x: number, $y: number) : number
+            /** Returns the sine of angle f.
+            * @param f The input angle, in radians.
+            * @returns The return value between -1 and +1. 
+            */
+            public static Sin ($f: number) : number
+            /** Returns the cosine of angle f.
+            * @param f The input angle, in radians.
+            * @returns The return value between -1 and 1. 
+            */
+            public static Cos ($f: number) : number
+            /** Returns the tangent of angle f in radians.
+            */
+            public static Tan ($f: number) : number
+            /** Returns the arc-sine of f - the angle in radians whose sine is f.
+            */
+            public static Asin ($f: number) : number
+            /** Returns the arc-cosine of f - the angle in radians whose cosine is f.
+            */
+            public static Acos ($f: number) : number
+            /** Returns the arc-tangent of f - the angle in radians whose tangent is f.
+            */
+            public static Atan ($f: number) : number
+            /** Returns the angle in radians whose Tan is y/x.
+            */
+            public static Atan2 ($y: number, $x: number) : number
+            /** Returns square root of f.
+            */
+            public static Sqrt ($f: number) : number
+            /** Returns the absolute value of f.
+            */
+            public static Abs ($f: number) : number
+            /** Returns the absolute value of value.
+            */
+            public static Abs ($value: number) : number
+            /** Returns the smallest of two or more values.
+            */
+            public static Min ($a: number, $b: number) : number
+            /** Returns the smallest of two or more values.
+            */
+            public static Min (...values: number[]) : number
+            /** Returns largest of two or more values.
+            */
+            public static Max ($a: number, $b: number) : number
+            /** Returns largest of two or more values.
+            */
+            public static Max (...values: number[]) : number
+            /** Returns f raised to power p.
+            */
+            public static Pow ($f: number, $p: number) : number
+            /** Returns e raised to the specified power.
+            */
+            public static Exp ($power: number) : number
+            /** Returns the logarithm of a specified number in a specified base.
+            */
+            public static Log ($f: number, $p: number) : number
+            /** Returns the natural (base e) logarithm of a specified number.
+            */
+            public static Log ($f: number) : number
+            /** Returns the base 10 logarithm of a specified number.
+            */
+            public static Log10 ($f: number) : number
+            /** Returns the smallest integer greater to or equal to f.
+            */
+            public static Ceil ($f: number) : number
+            /** Returns the largest integer smaller than or equal to f.
+            */
+            public static Floor ($f: number) : number
+            /** Returns f rounded to the nearest integer.
+            */
+            public static Round ($f: number) : number
+            /** Returns the smallest integer greater to or equal to f.
+            */
+            public static CeilToInt ($f: number) : number
+            /** Returns the largest integer smaller to or equal to f.
+            */
+            public static FloorToInt ($f: number) : number
+            /** Returns f rounded to the nearest integer.
+            */
+            public static RoundToInt ($f: number) : number
+            /** Returns the sign of f.
+            */
+            public static Sign ($f: number) : number
+            /** Clamps the given value between the given minimum float and maximum float values.  Returns the given value if it is within the minimum and maximum range.
+            * @param value The floating point value to restrict inside the range defined by the minimum and maximum values.
+            * @param min The minimum floating point value to compare against.
+            * @param max The maximum floating point value to compare against.
+            * @returns The float result between the minimum and maximum values. 
+            */
+            public static Clamp ($value: number, $min: number, $max: number) : number
+            /** Clamps value between 0 and 1 and returns value.
+            */
+            public static Clamp01 ($value: number) : number
+            /** Linearly interpolates between a and b by t.
+            * @param a The start value.
+            * @param b The end value.
+            * @param t The interpolation value between the two floats.
+            * @returns The interpolated float result between the two float values. 
+            */
+            public static Lerp ($a: number, $b: number, $t: number) : number
+            /** Linearly interpolates between a and b by t with no limit to t.
+            * @param a The start value.
+            * @param b The end value.
+            * @param t The interpolation between the two floats.
+            * @returns The float value as a result from the linear interpolation. 
+            */
+            public static LerpUnclamped ($a: number, $b: number, $t: number) : number
+            /** Same as Lerp but makes sure the values interpolate correctly when they wrap around 360 degrees.
+            */
+            public static LerpAngle ($a: number, $b: number, $t: number) : number
+            /** Moves a value current towards target.
+            * @param current The current value.
+            * @param target The value to move towards.
+            * @param maxDelta The maximum change that should be applied to the value.
+            */
+            public static MoveTowards ($current: number, $target: number, $maxDelta: number) : number
+            /** Same as MoveTowards but makes sure the values interpolate correctly when they wrap around 360 degrees.
+            */
+            public static MoveTowardsAngle ($current: number, $target: number, $maxDelta: number) : number
+            /** Interpolates between min and max with smoothing at the limits.
+            */
+            public static SmoothStep ($from: number, $to: number, $t: number) : number
+            public static Gamma ($value: number, $absmax: number, $gamma: number) : number
+            /** Compares two floating point values and returns true if they are similar.
+            */
+            public static Approximately ($a: number, $b: number) : boolean
+            /** Gradually changes a value towards a desired goal over time.
+            * @param current The current position.
+            * @param target The position we are trying to reach.
+            * @param currentVelocity The current velocity, this value is modified by the function every time you call it.
+            * @param smoothTime Approximately the time it will take to reach the target. A smaller value will reach the target faster.
+            * @param maxSpeed Optionally allows you to clamp the maximum speed.
+            * @param deltaTime The time since the last call to this function. By default Time.deltaTime.
+            */
+            public static SmoothDamp ($current: number, $target: number, $currentVelocity: $Ref<number>, $smoothTime: number, $maxSpeed: number) : number
+            /** Gradually changes a value towards a desired goal over time.
+            * @param current The current position.
+            * @param target The position we are trying to reach.
+            * @param currentVelocity The current velocity, this value is modified by the function every time you call it.
+            * @param smoothTime Approximately the time it will take to reach the target. A smaller value will reach the target faster.
+            * @param maxSpeed Optionally allows you to clamp the maximum speed.
+            * @param deltaTime The time since the last call to this function. By default Time.deltaTime.
+            */
+            public static SmoothDamp ($current: number, $target: number, $currentVelocity: $Ref<number>, $smoothTime: number) : number
+            /** Gradually changes a value towards a desired goal over time.
+            * @param current The current position.
+            * @param target The position we are trying to reach.
+            * @param currentVelocity The current velocity, this value is modified by the function every time you call it.
+            * @param smoothTime Approximately the time it will take to reach the target. A smaller value will reach the target faster.
+            * @param maxSpeed Optionally allows you to clamp the maximum speed.
+            * @param deltaTime The time since the last call to this function. By default Time.deltaTime.
+            */
+            public static SmoothDamp ($current: number, $target: number, $currentVelocity: $Ref<number>, $smoothTime: number, $maxSpeed: number, $deltaTime: number) : number
+            /** Gradually changes an angle given in degrees towards a desired goal angle over time.
+            * @param current The current position.
+            * @param target The position we are trying to reach.
+            * @param currentVelocity The current velocity, this value is modified by the function every time you call it.
+            * @param smoothTime Approximately the time it will take to reach the target. A smaller value will reach the target faster.
+            * @param maxSpeed Optionally allows you to clamp the maximum speed.
+            * @param deltaTime The time since the last call to this function. By default Time.deltaTime.
+            */
+            public static SmoothDampAngle ($current: number, $target: number, $currentVelocity: $Ref<number>, $smoothTime: number, $maxSpeed: number) : number
+            /** Gradually changes an angle given in degrees towards a desired goal angle over time.
+            * @param current The current position.
+            * @param target The position we are trying to reach.
+            * @param currentVelocity The current velocity, this value is modified by the function every time you call it.
+            * @param smoothTime Approximately the time it will take to reach the target. A smaller value will reach the target faster.
+            * @param maxSpeed Optionally allows you to clamp the maximum speed.
+            * @param deltaTime The time since the last call to this function. By default Time.deltaTime.
+            */
+            public static SmoothDampAngle ($current: number, $target: number, $currentVelocity: $Ref<number>, $smoothTime: number) : number
+            /** Gradually changes an angle given in degrees towards a desired goal angle over time.
+            * @param current The current position.
+            * @param target The position we are trying to reach.
+            * @param currentVelocity The current velocity, this value is modified by the function every time you call it.
+            * @param smoothTime Approximately the time it will take to reach the target. A smaller value will reach the target faster.
+            * @param maxSpeed Optionally allows you to clamp the maximum speed.
+            * @param deltaTime The time since the last call to this function. By default Time.deltaTime.
+            */
+            public static SmoothDampAngle ($current: number, $target: number, $currentVelocity: $Ref<number>, $smoothTime: number, $maxSpeed: number, $deltaTime: number) : number
+            /** Loops the value t, so that it is never larger than length and never smaller than 0.
+            */
+            public static Repeat ($t: number, $length: number) : number
+            /** PingPong returns a value that will increment and decrement between the value 0 and length.
+            */
+            public static PingPong ($t: number, $length: number) : number
+            /** Determines where a value lies between two points.
+            * @param a The start of the range.
+            * @param b The end of the range.
+            * @param value The point within the range you want to calculate.
+            * @returns A value between zero and one, representing where the "value" parameter falls within the range defined by a and b. 
+            */
+            public static InverseLerp ($a: number, $b: number, $value: number) : number
+            /** Calculates the shortest difference between two given angles given in degrees.
+            */
+            public static DeltaAngle ($current: number, $target: number) : number
+        }
         /** Behaviours are Components that can be enabled or disabled.
         */
         class Behaviour extends UnityEngine.Component
@@ -2116,6 +2498,18 @@
         /** Interface to control the Mecanim animation system.
         */
         class Animator extends UnityEngine.Behaviour
+        {
+            protected [__keep_incompatibility]: never;
+        }
+        /** Represents a Sprite object for use in 2D gameplay.
+        */
+        class Sprite extends UnityEngine.Object
+        {
+            protected [__keep_incompatibility]: never;
+        }
+        /** Base class for Texture handling.
+        */
+        class Texture extends UnityEngine.Object
         {
             protected [__keep_incompatibility]: never;
         }
@@ -2755,6 +3149,49 @@
         class Image extends UnityEngine.UI.MaskableGraphic implements UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, UnityEngine.ICanvasRaycastFilter, UnityEngine.ISerializationCallbackReceiver, UnityEngine.UI.ICanvasElement, UnityEngine.UI.ILayoutElement, UnityEngine.UI.IClippable
         {
             protected [__keep_incompatibility]: never;
+            public get sprite(): UnityEngine.Sprite;
+            public set sprite(value: UnityEngine.Sprite);
+            public get overrideSprite(): UnityEngine.Sprite;
+            public set overrideSprite(value: UnityEngine.Sprite);
+            public get type(): UnityEngine.UI.Image.Type;
+            public set type(value: UnityEngine.UI.Image.Type);
+            public get preserveAspect(): boolean;
+            public set preserveAspect(value: boolean);
+            public get fillCenter(): boolean;
+            public set fillCenter(value: boolean);
+            public get fillMethod(): UnityEngine.UI.Image.FillMethod;
+            public set fillMethod(value: UnityEngine.UI.Image.FillMethod);
+            public get fillAmount(): number;
+            public set fillAmount(value: number);
+            public get fillClockwise(): boolean;
+            public set fillClockwise(value: boolean);
+            public get fillOrigin(): number;
+            public set fillOrigin(value: number);
+            public get alphaHitTestMinimumThreshold(): number;
+            public set alphaHitTestMinimumThreshold(value: number);
+            public get useSpriteMesh(): boolean;
+            public set useSpriteMesh(value: boolean);
+            public static get defaultETC1GraphicMaterial(): UnityEngine.Material;
+            public get mainTexture(): UnityEngine.Texture;
+            public get hasBorder(): boolean;
+            public get pixelsPerUnitMultiplier(): number;
+            public set pixelsPerUnitMultiplier(value: number);
+            public get pixelsPerUnit(): number;
+            public get material(): UnityEngine.Material;
+            public set material(value: UnityEngine.Material);
+            public get minWidth(): number;
+            public get preferredWidth(): number;
+            public get flexibleWidth(): number;
+            public get minHeight(): number;
+            public get preferredHeight(): number;
+            public get flexibleHeight(): number;
+            public get layoutPriority(): number;
+            public DisableSpriteOptimizations () : void
+            public OnBeforeSerialize () : void
+            public OnAfterDeserialize () : void
+            public CalculateLayoutInputHorizontal () : void
+            public CalculateLayoutInputVertical () : void
+            public IsRaycastLocationValid ($screenPoint: UnityEngine.Vector2, $eventCamera: UnityEngine.Camera) : boolean
         }
         interface ILayoutElement
         {
@@ -2881,6 +3318,12 @@
     namespace UnityEngine.UI.Selectable {
         enum Transition
         { None = 0, ColorTint = 1, SpriteSwap = 2, Animation = 3 }
+    }
+    namespace UnityEngine.UI.Image {
+        enum Type
+        { Simple = 0, Sliced = 1, Tiled = 2, Filled = 3 }
+        enum FillMethod
+        { Horizontal = 0, Vertical = 1, Radial90 = 2, Radial180 = 3, Radial360 = 4 }
     }
     namespace UnityEngine.Events {
         /** Abstract base class for UnityEvents.
