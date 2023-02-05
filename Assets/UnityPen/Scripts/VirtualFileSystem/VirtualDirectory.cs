@@ -1,15 +1,10 @@
-﻿namespace UnityPen.Scripts.VirtualFileSystem
+﻿using System.Collections.Generic;
+
+namespace UnityPen.Scripts.VirtualFileSystem
 {
     public class VirtualDirectory : global::VirtualFileSystem
     {
-        public string GetName()
-        { 
-            throw new System.NotImplementedException();
-        }
-
-        public string GetFullName()
-        {
-            throw new System.NotImplementedException();
-        }
+        public List<VirtualDirectory> subDirectories = new List<VirtualDirectory>();
+        
     }
 }

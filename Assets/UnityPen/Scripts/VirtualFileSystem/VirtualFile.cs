@@ -2,14 +2,11 @@
 {
     public class VirtualFile : global::VirtualFileSystem
     {
-        public string GetName()
-        {
-            throw new System.NotImplementedException();
-        }
+        private string content;
 
-        public string GetFullName()
+        public VirtualFile(string path)
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }
