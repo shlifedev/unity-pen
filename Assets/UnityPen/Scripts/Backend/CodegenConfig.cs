@@ -1,3 +1,5 @@
+
+#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
 using Puerts;
@@ -7,8 +9,7 @@ using UnityPen.Scripts;
 namespace UnityPen.Editor
 {
 
-
-#if UNITY_EDITOR
+ 
     [Configure]
     public class ExamplesCfg
     {
