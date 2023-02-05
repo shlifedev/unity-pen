@@ -1166,29 +1166,29 @@ var tempDouble;
 var tempI64;
 
 var ASM_CONSTS = {
- 3443432: function() {
+ 3444348: function() {
   Module["emscripten_get_now_backup"] = performance.now;
  },
- 3443487: function($0) {
+ 3444403: function($0) {
   performance.now = function() {
    return $0;
   };
  },
- 3443535: function($0) {
+ 3444451: function($0) {
   performance.now = function() {
    return $0;
   };
  },
- 3443583: function() {
+ 3444499: function() {
   performance.now = Module["emscripten_get_now_backup"];
  },
- 3443638: function() {
+ 3444554: function() {
   return Module.webglContextAttributes.premultipliedAlpha;
  },
- 3443699: function() {
+ 3444615: function() {
   return Module.webglContextAttributes.preserveDrawingBuffer;
  },
- 3443763: function() {
+ 3444679: function() {
   return Module.webglContextAttributes.powerPreference;
  }
 };
@@ -1578,6 +1578,28 @@ function _IdleNotificationDeadline() {
  if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
  if (global.PuertsWebGL.debug) console.log("WebGL DLL:IdleNotificationDeadline");
  return global.PuertsWebGL["IdleNotificationDeadline"].apply(this, arguments);
+}
+
+function _InitPuertsWebGL() {
+ var global = typeof global != "undefined" ? global : window;
+ if (!global.PuertsWebGL) {
+  throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
+ }
+ global.PuertsWebGL.Init({
+  UTF8ToString: UTF8ToString,
+  _malloc: _malloc,
+  _memcpy: _emscripten_memcpy_big,
+  _memset: _memset,
+  _free: _free,
+  stringToUTF8: stringToUTF8,
+  lengthBytesUTF8: lengthBytesUTF8,
+  unityInstance: Module
+ });
+ global.PuertsWebGL.inited = true;
+}
+
+function _InitPuertsWebGLRollback() {
+ global.PuertsWebGL.inited = false;
 }
 
 function _InspectorTick() {
@@ -3310,6 +3332,14 @@ function _SetBooleanToOutValue() {
  if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
  if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetBooleanToOutValue");
  return global.PuertsWebGL["SetBooleanToOutValue"].apply(this, arguments);
+}
+
+function _SetCallV8() {
+ var global = typeof global != "undefined" ? global : window;
+ if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
+ if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
+ if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetCallV8");
+ return global.PuertsWebGL["SetCallV8"].apply(this, arguments);
 }
 
 function _SetDateToOutValue() {
@@ -13716,6 +13746,8 @@ var asmLibraryArg = {
  "GetTypeIdFromResult": _GetTypeIdFromResult,
  "GetTypeIdFromValue": _GetTypeIdFromValue,
  "IdleNotificationDeadline": _IdleNotificationDeadline,
+ "InitPuertsWebGL": _InitPuertsWebGL,
+ "InitPuertsWebGLRollback": _InitPuertsWebGLRollback,
  "InspectorTick": _InspectorTick,
  "InvokeJSFunction": _InvokeJSFunction,
  "JS_Accelerometer_IsRunning": _JS_Accelerometer_IsRunning,
@@ -13815,6 +13847,7 @@ var asmLibraryArg = {
  "SetArrayBufferToOutValue": _SetArrayBufferToOutValue,
  "SetBigIntToOutValue": _SetBigIntToOutValue,
  "SetBooleanToOutValue": _SetBooleanToOutValue,
+ "SetCallV8": _SetCallV8,
  "SetDateToOutValue": _SetDateToOutValue,
  "SetGeneralDestructor": _SetGeneralDestructor,
  "SetGlobalFunction": _SetGlobalFunction,
