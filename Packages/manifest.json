@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.tencent.puerts.core": "1.4.1-pre.1",
     "com.unity.collab-proxy": "1.17.7",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.18",
@@ -42,7 +41,8 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0"
+    "com.unity.modules.xr": "1.0.0",
+    "com.tencent.puerts.core": "1.4.1-pre.1"
   },
   "scopedRegistries": [
     {

@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 97090795}
   - component: {fileID: 97090794}
   - component: {fileID: 97090793}
+  - component: {fileID: 97090796}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -254,11 +255,10 @@ MonoBehaviour:
     {\r\n  /**\r\n   * @param {CS.UnityPen.Scripts.JavascriptBehaviour} self\r\n  
     */\r\n  constructor(self) {\r\n    this.self = self;\r\n    this.self.JsStart
     = () => this.onStart();\r\n    this.self.JsUpdate = () => this.onUpdate();\r\n 
-    }\r\n\r\n  onStart() {}\r\n\r\n  onUpdate() { \r\n    // \uAE30\uBCF8\uC801\uC73C\uB85C
-    CS.UnityEngine.Vector3 \uC73C\uB85C\uC811\uADFC\r\n    this.self.transform.Rotate(new
+    }\r\n\r\n  onStart() {}\r\n\r\n  onUpdate() {  \r\n    this.self.transform.Rotate(new
     CS.UnityEngine.Vector3(rotate * CS.UnityEngine.Time.deltaTime, 0, 0));   \r\n   
     this.self.transform.position = new Vector3(Mathf.Sin(Time.realtimeSinceStartup),
-    0, 0);\r\n  }\r\n}\r\n\r\nexport function init(self) {\r\n  var cube = new Cube(self);\r\n}\r\n"
+    0, 0);\r\n  }\r\n}\r\n\r\n(function(self) {\r\n  new Cube(self);\r\n}) "
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -308,6 +308,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97090791}
   m_CullTransparentMesh: 1
+--- !u!114 &97090796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97090791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94b5b6e358ebaf4b8a3a9053384260b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: {fileID: 97090793}
 --- !u!1 &222459451
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,11 +719,10 @@ MonoBehaviour:
     {\r\n  /**\r\n   * @param {CS.UnityPen.Scripts.JavascriptBehaviour} self\r\n  
     */\r\n  constructor(self) {\r\n    this.self = self;\r\n    this.self.JsStart
     = () => this.onStart();\r\n    this.self.JsUpdate = () => this.onUpdate();\r\n 
-    }\r\n\r\n  onStart() {}\r\n\r\n  onUpdate() { \r\n    // \uAE30\uBCF8\uC801\uC73C\uB85C
-    CS.UnityEngine.Vector3 \uC73C\uB85C\uC811\uADFC\r\n    this.self.transform.Rotate(new
+    }\r\n\r\n  onStart() {}\r\n\r\n  onUpdate() {  \r\n    this.self.transform.Rotate(new
     CS.UnityEngine.Vector3(rotate * CS.UnityEngine.Time.deltaTime, 0, 0));   \r\n   
     this.self.transform.position = new Vector3(Mathf.Sin(Time.realtimeSinceStartup),
-    0, 0);\r\n  }\r\n}\r\n\r\nexport function init(self) {\r\n  var cube = new Cube(self);\r\n}\r\n\u200B"
+    0, 0);\r\n  }\r\n}\r\n\r\n(function(self) {\r\n  new Cube(self);\r\n}) \u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1791,7 +1803,7 @@ GameObject:
   - component: {fileID: 2137918443}
   - component: {fileID: 2137918449}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: TestCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1887,4 +1899,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05b13913f2f4d4ca139eb2c71451614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: cube.mjs
+  code: "const rotate = 30; \r\nconst Vector3 = CS.UnityEngine.Vector3;\r\nconst
+    Mathf = CS.UnityEngine.Mathf;\r\nconst Time = CS.UnityEngine.Time;\r\nclass Cube
+    {\r\n  /**\r\n   * @param {CS.UnityPen.Scripts.JavascriptBehaviour} self\r\n  
+    */\r\n  constructor(self) {\r\n    this.self = self;\r\n    this.self.JsStart
+    = () => this.onStart();\r\n    this.self.JsUpdate = () => this.onUpdate();\r\n 
+    }\r\n\r\n  onStart() {}\r\n\r\n  onUpdate() {  \r\n    this.self.transform.Rotate(new
+    CS.UnityEngine.Vector3(rotate * CS.UnityEngine.Time.deltaTime, 0, 0));   \r\n   
+    this.self.transform.position = new Vector3(Mathf.Sin(Time.realtimeSinceStartup),
+    0, 0);\r\n  }\r\n}\r\n\r\n(function(self) {\r\n  new Cube(self);\r\n}) "
