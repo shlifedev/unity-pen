@@ -2,7 +2,7 @@
 using Puerts;
 using UnityEngine;
 
-namespace UnityPen.Scripts
+namespace UnityPen
 {    
     public delegate void ModuleInit(JavascriptBehaviour monoBehaviour);
     public class JavascriptBehaviour : MonoBehaviour

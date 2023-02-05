@@ -1,6 +1,6 @@
 ﻿using RuntimeInspectorNamespace;
 
-namespace UnityPen.Scripts
+namespace UnityPen
 {
     public class PenHierarchy : RuntimeHierarchy
     {

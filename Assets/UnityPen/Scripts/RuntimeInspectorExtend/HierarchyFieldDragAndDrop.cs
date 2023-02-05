@@ -5,7 +5,7 @@ using RuntimeInspectorNamespace;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace UnityPen.Scripts
+namespace UnityPen
 {
     public class HierarchyFieldDragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
     {

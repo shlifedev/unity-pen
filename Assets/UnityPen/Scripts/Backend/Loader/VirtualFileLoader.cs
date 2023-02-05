@@ -1,4 +1,4 @@
-﻿namespace UnityPen.Scripts.Loader
+﻿namespace UnityPen
 {
     public class VirtualFileLoader
     {

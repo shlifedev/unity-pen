@@ -6,34 +6,38 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TemplateUI : MonoBehaviour
-{
-    private JsEnv env;
-    public TMP_InputField field;
-    public Button evalBtn;
-    public Button clear;
-
-
-    private void Awake()
+namespace UnityPen
+{ 
+    public class TemplateUI : MonoBehaviour
     {
-        env = new JsEnv();  
-        this.evalBtn.onClick.AddListener(OnClickEval);
-        this.clear.onClick.AddListener(OnClickClear); 
-        field.onSubmit.AddListener(x =>
+        private JsEnv env;
+        public TMP_InputField field;
+        public Button evalBtn;
+        public Button clear;
+
+
+        private void Awake()
         {
-            OnClickEval();
-            field.text = null;
-        });
-    }
+            env = new JsEnv();
+            this.evalBtn.onClick.AddListener(OnClickEval);
+            this.clear.onClick.AddListener(OnClickClear);
+            field.onSubmit.AddListener(x =>
+            {
+                OnClickEval();
+                field.text = null;
+            });
+        }
 
-    void OnClickClear()
-    {
-        env = new JsEnv();
-        field.text = "console.log(\"hello world!\")";
-    }
-    void OnClickEval()
-    {
-        env.Eval(field.text);
-        field.text = null;
+        void OnClickClear()
+        {
+            env = new JsEnv();
+            field.text = "console.log(\"hello world!\")";
+        }
+
+        void OnClickEval()
+        {
+            env.Eval(field.text);
+            field.text = null;
+        }
     }
 }

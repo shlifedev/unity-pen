@@ -1,18 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace UnityPen.Scripts.Playground.UI
+namespace UnityPen
 {
-    public class UIDragArea : MonoBehaviour, IDragHandler, IEndDragHandler
+    namespace UnityPen.Scripts.Playground.UI
     {
-        public RectTransform target;
-        public void OnDrag(PointerEventData eventData)
-        { 
-         
-        }
+        public class UIDragArea : MonoBehaviour, IDragHandler, IEndDragHandler
+        {
+            public RectTransform target;
 
-        public void OnEndDrag(PointerEventData eventData)
-        {   
+            public void OnDrag(PointerEventData eventData)
+            {
+
+            }
+
+            public void OnEndDrag(PointerEventData eventData)
+            {
+            }
         }
     }
 }
