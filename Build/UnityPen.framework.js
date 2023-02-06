@@ -1166,29 +1166,29 @@ var tempDouble;
 var tempI64;
 
 var ASM_CONSTS = {
- 3444348: function() {
+ 3565368: function() {
   Module["emscripten_get_now_backup"] = performance.now;
  },
- 3444403: function($0) {
+ 3565423: function($0) {
   performance.now = function() {
    return $0;
   };
  },
- 3444451: function($0) {
+ 3565471: function($0) {
   performance.now = function() {
    return $0;
   };
  },
- 3444499: function() {
+ 3565519: function() {
   performance.now = Module["emscripten_get_now_backup"];
  },
- 3444554: function() {
+ 3565574: function() {
   return Module.webglContextAttributes.premultipliedAlpha;
  },
- 3444615: function() {
+ 3565635: function() {
   return Module.webglContextAttributes.preserveDrawingBuffer;
  },
- 3444679: function() {
+ 3565699: function() {
   return Module.webglContextAttributes.powerPreference;
  }
 };
@@ -1290,332 +1290,6 @@ function stackTrace() {
  var js = jsStackTrace();
  if (Module["extraStackTrace"]) js += "\n" + Module["extraStackTrace"]();
  return demangleAll(js);
-}
-
-function _CreateInspector() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:CreateInspector");
- return global.PuertsWebGL["CreateInspector"].apply(this, arguments);
-}
-
-function _CreateJSEngine() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:CreateJSEngine");
- return global.PuertsWebGL["CreateJSEngine"].apply(this, arguments);
-}
-
-function _CreateJSEngineWithExternalEnv() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:CreateJSEngineWithExternalEnv");
- return global.PuertsWebGL["CreateJSEngineWithExternalEnv"].apply(this, arguments);
-}
-
-function _DestroyInspector() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:DestroyInspector");
- return global.PuertsWebGL["DestroyInspector"].apply(this, arguments);
-}
-
-function _DestroyJSEngine() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:DestroyJSEngine");
- return global.PuertsWebGL["DestroyJSEngine"].apply(this, arguments);
-}
-
-function _Eval() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:Eval");
- return global.PuertsWebGL["Eval"].apply(this, arguments);
-}
-
-function _ExecuteModule() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ExecuteModule");
- return global.PuertsWebGL["ExecuteModule"].apply(this, arguments);
-}
-
-function _GetApiLevel() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetApiLevel");
- return global.PuertsWebGL["GetApiLevel"].apply(this, arguments);
-}
-
-function _GetArgumentType() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetArgumentType");
- return global.PuertsWebGL["GetArgumentType"].apply(this, arguments);
-}
-
-function _GetArrayBufferFromResult() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetArrayBufferFromResult");
- return global.PuertsWebGL["GetArrayBufferFromResult"].apply(this, arguments);
-}
-
-function _GetArrayBufferFromValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetArrayBufferFromValue");
- return global.PuertsWebGL["GetArrayBufferFromValue"].apply(this, arguments);
-}
-
-function _GetBigIntFromResult() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetBigIntFromResult");
- return global.PuertsWebGL["GetBigIntFromResult"].apply(this, arguments);
-}
-
-function _GetBigIntFromValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetBigIntFromValue");
- return global.PuertsWebGL["GetBigIntFromValue"].apply(this, arguments);
-}
-
-function _GetBooleanFromResult() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetBooleanFromResult");
- return global.PuertsWebGL["GetBooleanFromResult"].apply(this, arguments);
-}
-
-function _GetBooleanFromValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetBooleanFromValue");
- return global.PuertsWebGL["GetBooleanFromValue"].apply(this, arguments);
-}
-
-function _GetDateFromResult() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetDateFromResult");
- return global.PuertsWebGL["GetDateFromResult"].apply(this, arguments);
-}
-
-function _GetDateFromValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetDateFromValue");
- return global.PuertsWebGL["GetDateFromValue"].apply(this, arguments);
-}
-
-function _GetFunctionFromResult() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetFunctionFromResult");
- return global.PuertsWebGL["GetFunctionFromResult"].apply(this, arguments);
-}
-
-function _GetFunctionFromValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetFunctionFromValue");
- return global.PuertsWebGL["GetFunctionFromValue"].apply(this, arguments);
-}
-
-function _GetFunctionLastExceptionInfo() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetFunctionLastExceptionInfo");
- return global.PuertsWebGL["GetFunctionLastExceptionInfo"].apply(this, arguments);
-}
-
-function _GetJSObjectFromResult() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetJSObjectFromResult");
- return global.PuertsWebGL["GetJSObjectFromResult"].apply(this, arguments);
-}
-
-function _GetJSObjectFromValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetJSObjectFromValue");
- return global.PuertsWebGL["GetJSObjectFromValue"].apply(this, arguments);
-}
-
-function _GetJsValueType() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetJsValueType");
- return global.PuertsWebGL["GetJsValueType"].apply(this, arguments);
-}
-
-function _GetLastExceptionInfo() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetLastExceptionInfo");
- return global.PuertsWebGL["GetLastExceptionInfo"].apply(this, arguments);
-}
-
-function _GetLibBackend() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetLibBackend");
- return global.PuertsWebGL["GetLibBackend"].apply(this, arguments);
-}
-
-function _GetLibVersion() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetLibVersion");
- return global.PuertsWebGL["GetLibVersion"].apply(this, arguments);
-}
-
-function _GetNumberFromResult() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetNumberFromResult");
- return global.PuertsWebGL["GetNumberFromResult"].apply(this, arguments);
-}
-
-function _GetNumberFromValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetNumberFromValue");
- return global.PuertsWebGL["GetNumberFromValue"].apply(this, arguments);
-}
-
-function _GetObjectFromResult() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetObjectFromResult");
- return global.PuertsWebGL["GetObjectFromResult"].apply(this, arguments);
-}
-
-function _GetObjectFromValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetObjectFromValue");
- return global.PuertsWebGL["GetObjectFromValue"].apply(this, arguments);
-}
-
-function _GetResultType() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetResultType");
- return global.PuertsWebGL["GetResultType"].apply(this, arguments);
-}
-
-function _GetStringFromResult() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetStringFromResult");
- return global.PuertsWebGL["GetStringFromResult"].apply(this, arguments);
-}
-
-function _GetStringFromValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetStringFromValue");
- return global.PuertsWebGL["GetStringFromValue"].apply(this, arguments);
-}
-
-function _GetTypeIdFromResult() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetTypeIdFromResult");
- return global.PuertsWebGL["GetTypeIdFromResult"].apply(this, arguments);
-}
-
-function _GetTypeIdFromValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:GetTypeIdFromValue");
- return global.PuertsWebGL["GetTypeIdFromValue"].apply(this, arguments);
-}
-
-function _IdleNotificationDeadline() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:IdleNotificationDeadline");
- return global.PuertsWebGL["IdleNotificationDeadline"].apply(this, arguments);
-}
-
-function _InitPuertsWebGL() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) {
-  throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- }
- global.PuertsWebGL.Init({
-  UTF8ToString: UTF8ToString,
-  _malloc: _malloc,
-  _memcpy: _emscripten_memcpy_big,
-  _memset: _memset,
-  _free: _free,
-  stringToUTF8: stringToUTF8,
-  lengthBytesUTF8: lengthBytesUTF8,
-  unityInstance: Module
- });
- global.PuertsWebGL.inited = true;
-}
-
-function _InitPuertsWebGLRollback() {
- global.PuertsWebGL.inited = false;
-}
-
-function _InspectorTick() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:InspectorTick");
- return global.PuertsWebGL["InspectorTick"].apply(this, arguments);
-}
-
-function _InvokeJSFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:InvokeJSFunction");
- return global.PuertsWebGL["InvokeJSFunction"].apply(this, arguments);
 }
 
 var JS_Accelerometer = null;
@@ -3044,398 +2718,6 @@ function _JS_SystemInfo_HasWebGL() {
 
 function _JS_UnityEngineShouldQuit() {
  return !!Module.shouldQuit;
-}
-
-function _LogicTick() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:LogicTick");
- return global.PuertsWebGL["LogicTick"].apply(this, arguments);
-}
-
-function _LowMemoryNotification() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:LowMemoryNotification");
- return global.PuertsWebGL["LowMemoryNotification"].apply(this, arguments);
-}
-
-function _PushArrayBufferForJSFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:PushArrayBufferForJSFunction");
- return global.PuertsWebGL["PushArrayBufferForJSFunction"].apply(this, arguments);
-}
-
-function _PushBigIntForJSFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:PushBigIntForJSFunction");
- return global.PuertsWebGL["PushBigIntForJSFunction"].apply(this, arguments);
-}
-
-function _PushBooleanForJSFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:PushBooleanForJSFunction");
- return global.PuertsWebGL["PushBooleanForJSFunction"].apply(this, arguments);
-}
-
-function _PushDateForJSFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:PushDateForJSFunction");
- return global.PuertsWebGL["PushDateForJSFunction"].apply(this, arguments);
-}
-
-function _PushJSFunctionForJSFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:PushJSFunctionForJSFunction");
- return global.PuertsWebGL["PushJSFunctionForJSFunction"].apply(this, arguments);
-}
-
-function _PushJSObjectForJSFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:PushJSObjectForJSFunction");
- return global.PuertsWebGL["PushJSObjectForJSFunction"].apply(this, arguments);
-}
-
-function _PushNullForJSFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:PushNullForJSFunction");
- return global.PuertsWebGL["PushNullForJSFunction"].apply(this, arguments);
-}
-
-function _PushNumberForJSFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:PushNumberForJSFunction");
- return global.PuertsWebGL["PushNumberForJSFunction"].apply(this, arguments);
-}
-
-function _PushObjectForJSFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:PushObjectForJSFunction");
- return global.PuertsWebGL["PushObjectForJSFunction"].apply(this, arguments);
-}
-
-function _PushStringForJSFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:PushStringForJSFunction");
- return global.PuertsWebGL["PushStringForJSFunction"].apply(this, arguments);
-}
-
-function _RegisterFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:RegisterFunction");
- return global.PuertsWebGL["RegisterFunction"].apply(this, arguments);
-}
-
-function _RegisterProperty() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:RegisterProperty");
- return global.PuertsWebGL["RegisterProperty"].apply(this, arguments);
-}
-
-function _RegisterStruct() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:RegisterStruct");
- return global.PuertsWebGL["RegisterStruct"].apply(this, arguments);
-}
-
-function _ReleaseJSFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ReleaseJSFunction");
- return global.PuertsWebGL["ReleaseJSFunction"].apply(this, arguments);
-}
-
-function _ReleaseJSObject() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ReleaseJSObject");
- return global.PuertsWebGL["ReleaseJSObject"].apply(this, arguments);
-}
-
-function _RequestFullGarbageCollectionForTesting() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:RequestFullGarbageCollectionForTesting");
- return global.PuertsWebGL["RequestFullGarbageCollectionForTesting"].apply(this, arguments);
-}
-
-function _RequestMinorGarbageCollectionForTesting() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:RequestMinorGarbageCollectionForTesting");
- return global.PuertsWebGL["RequestMinorGarbageCollectionForTesting"].apply(this, arguments);
-}
-
-function _ResetResult() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ResetResult");
- return global.PuertsWebGL["ResetResult"].apply(this, arguments);
-}
-
-function _ResultIsBigInt() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ResultIsBigInt");
- return global.PuertsWebGL["ResultIsBigInt"].apply(this, arguments);
-}
-
-function _ReturnArrayBuffer() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ReturnArrayBuffer");
- return global.PuertsWebGL["ReturnArrayBuffer"].apply(this, arguments);
-}
-
-function _ReturnBigInt() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ReturnBigInt");
- return global.PuertsWebGL["ReturnBigInt"].apply(this, arguments);
-}
-
-function _ReturnBoolean() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ReturnBoolean");
- return global.PuertsWebGL["ReturnBoolean"].apply(this, arguments);
-}
-
-function _ReturnCSharpFunctionCallback() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ReturnCSharpFunctionCallback");
- return global.PuertsWebGL["ReturnCSharpFunctionCallback"].apply(this, arguments);
-}
-
-function _ReturnClass() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ReturnClass");
- return global.PuertsWebGL["ReturnClass"].apply(this, arguments);
-}
-
-function _ReturnDate() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ReturnDate");
- return global.PuertsWebGL["ReturnDate"].apply(this, arguments);
-}
-
-function _ReturnFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ReturnFunction");
- return global.PuertsWebGL["ReturnFunction"].apply(this, arguments);
-}
-
-function _ReturnJSObject() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ReturnJSObject");
- return global.PuertsWebGL["ReturnJSObject"].apply(this, arguments);
-}
-
-function _ReturnNull() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ReturnNull");
- return global.PuertsWebGL["ReturnNull"].apply(this, arguments);
-}
-
-function _ReturnNumber() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ReturnNumber");
- return global.PuertsWebGL["ReturnNumber"].apply(this, arguments);
-}
-
-function _ReturnObject() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ReturnObject");
- return global.PuertsWebGL["ReturnObject"].apply(this, arguments);
-}
-
-function _ReturnString() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ReturnString");
- return global.PuertsWebGL["ReturnString"].apply(this, arguments);
-}
-
-function _SetArrayBufferToOutValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetArrayBufferToOutValue");
- return global.PuertsWebGL["SetArrayBufferToOutValue"].apply(this, arguments);
-}
-
-function _SetBigIntToOutValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetBigIntToOutValue");
- return global.PuertsWebGL["SetBigIntToOutValue"].apply(this, arguments);
-}
-
-function _SetBooleanToOutValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetBooleanToOutValue");
- return global.PuertsWebGL["SetBooleanToOutValue"].apply(this, arguments);
-}
-
-function _SetCallV8() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetCallV8");
- return global.PuertsWebGL["SetCallV8"].apply(this, arguments);
-}
-
-function _SetDateToOutValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetDateToOutValue");
- return global.PuertsWebGL["SetDateToOutValue"].apply(this, arguments);
-}
-
-function _SetGeneralDestructor() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetGeneralDestructor");
- return global.PuertsWebGL["SetGeneralDestructor"].apply(this, arguments);
-}
-
-function _SetGlobalFunction() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetGlobalFunction");
- return global.PuertsWebGL["SetGlobalFunction"].apply(this, arguments);
-}
-
-function _SetLogCallback() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetLogCallback");
- return global.PuertsWebGL["SetLogCallback"].apply(this, arguments);
-}
-
-function _SetModuleResolver() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetModuleResolver");
- return global.PuertsWebGL["SetModuleResolver"].apply(this, arguments);
-}
-
-function _SetNullToOutValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetNullToOutValue");
- return global.PuertsWebGL["SetNullToOutValue"].apply(this, arguments);
-}
-
-function _SetNumberToOutValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetNumberToOutValue");
- return global.PuertsWebGL["SetNumberToOutValue"].apply(this, arguments);
-}
-
-function _SetObjectToOutValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetObjectToOutValue");
- return global.PuertsWebGL["SetObjectToOutValue"].apply(this, arguments);
-}
-
-function _SetStringToOutValue() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:SetStringToOutValue");
- return global.PuertsWebGL["SetStringToOutValue"].apply(this, arguments);
-}
-
-function _ThrowException() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ThrowException");
- return global.PuertsWebGL["ThrowException"].apply(this, arguments);
-}
-
-function _ValueIsBigInt() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:ValueIsBigInt");
- return global.PuertsWebGL["ValueIsBigInt"].apply(this, arguments);
-}
-
-function __RegisterClass() {
- var global = typeof global != "undefined" ? global : window;
- if (!global.PuertsWebGL) throw new Error("cannot found PuertsWebGL script. please find some way to load puerts-runtime.js");
- if (!global.PuertsWebGL.inited) throw new Error("please use Puerts.WebGL.GetBrowserEnv() to create JsEnv");
- if (global.PuertsWebGL.debug) console.log("WebGL DLL:_RegisterClass");
- return global.PuertsWebGL["_RegisterClass"].apply(this, arguments);
 }
 
 var ExceptionInfoAttrs = {
@@ -13710,46 +12992,6 @@ function intArrayFromString(stringy, dontAddNull, length) {
 }
 
 var asmLibraryArg = {
- "CreateInspector": _CreateInspector,
- "CreateJSEngine": _CreateJSEngine,
- "CreateJSEngineWithExternalEnv": _CreateJSEngineWithExternalEnv,
- "DestroyInspector": _DestroyInspector,
- "DestroyJSEngine": _DestroyJSEngine,
- "Eval": _Eval,
- "ExecuteModule": _ExecuteModule,
- "GetApiLevel": _GetApiLevel,
- "GetArgumentType": _GetArgumentType,
- "GetArrayBufferFromResult": _GetArrayBufferFromResult,
- "GetArrayBufferFromValue": _GetArrayBufferFromValue,
- "GetBigIntFromResult": _GetBigIntFromResult,
- "GetBigIntFromValue": _GetBigIntFromValue,
- "GetBooleanFromResult": _GetBooleanFromResult,
- "GetBooleanFromValue": _GetBooleanFromValue,
- "GetDateFromResult": _GetDateFromResult,
- "GetDateFromValue": _GetDateFromValue,
- "GetFunctionFromResult": _GetFunctionFromResult,
- "GetFunctionFromValue": _GetFunctionFromValue,
- "GetFunctionLastExceptionInfo": _GetFunctionLastExceptionInfo,
- "GetJSObjectFromResult": _GetJSObjectFromResult,
- "GetJSObjectFromValue": _GetJSObjectFromValue,
- "GetJsValueType": _GetJsValueType,
- "GetLastExceptionInfo": _GetLastExceptionInfo,
- "GetLibBackend": _GetLibBackend,
- "GetLibVersion": _GetLibVersion,
- "GetNumberFromResult": _GetNumberFromResult,
- "GetNumberFromValue": _GetNumberFromValue,
- "GetObjectFromResult": _GetObjectFromResult,
- "GetObjectFromValue": _GetObjectFromValue,
- "GetResultType": _GetResultType,
- "GetStringFromResult": _GetStringFromResult,
- "GetStringFromValue": _GetStringFromValue,
- "GetTypeIdFromResult": _GetTypeIdFromResult,
- "GetTypeIdFromValue": _GetTypeIdFromValue,
- "IdleNotificationDeadline": _IdleNotificationDeadline,
- "InitPuertsWebGL": _InitPuertsWebGL,
- "InitPuertsWebGLRollback": _InitPuertsWebGLRollback,
- "InspectorTick": _InspectorTick,
- "InvokeJSFunction": _InvokeJSFunction,
  "JS_Accelerometer_IsRunning": _JS_Accelerometer_IsRunning,
  "JS_Accelerometer_Start": _JS_Accelerometer_Start,
  "JS_Accelerometer_Stop": _JS_Accelerometer_Stop,
@@ -13811,55 +13053,6 @@ var asmLibraryArg = {
  "JS_SystemInfo_HasFullscreen": _JS_SystemInfo_HasFullscreen,
  "JS_SystemInfo_HasWebGL": _JS_SystemInfo_HasWebGL,
  "JS_UnityEngineShouldQuit": _JS_UnityEngineShouldQuit,
- "LogicTick": _LogicTick,
- "LowMemoryNotification": _LowMemoryNotification,
- "PushArrayBufferForJSFunction": _PushArrayBufferForJSFunction,
- "PushBigIntForJSFunction": _PushBigIntForJSFunction,
- "PushBooleanForJSFunction": _PushBooleanForJSFunction,
- "PushDateForJSFunction": _PushDateForJSFunction,
- "PushJSFunctionForJSFunction": _PushJSFunctionForJSFunction,
- "PushJSObjectForJSFunction": _PushJSObjectForJSFunction,
- "PushNullForJSFunction": _PushNullForJSFunction,
- "PushNumberForJSFunction": _PushNumberForJSFunction,
- "PushObjectForJSFunction": _PushObjectForJSFunction,
- "PushStringForJSFunction": _PushStringForJSFunction,
- "RegisterFunction": _RegisterFunction,
- "RegisterProperty": _RegisterProperty,
- "RegisterStruct": _RegisterStruct,
- "ReleaseJSFunction": _ReleaseJSFunction,
- "ReleaseJSObject": _ReleaseJSObject,
- "RequestFullGarbageCollectionForTesting": _RequestFullGarbageCollectionForTesting,
- "RequestMinorGarbageCollectionForTesting": _RequestMinorGarbageCollectionForTesting,
- "ResetResult": _ResetResult,
- "ResultIsBigInt": _ResultIsBigInt,
- "ReturnArrayBuffer": _ReturnArrayBuffer,
- "ReturnBigInt": _ReturnBigInt,
- "ReturnBoolean": _ReturnBoolean,
- "ReturnCSharpFunctionCallback": _ReturnCSharpFunctionCallback,
- "ReturnClass": _ReturnClass,
- "ReturnDate": _ReturnDate,
- "ReturnFunction": _ReturnFunction,
- "ReturnJSObject": _ReturnJSObject,
- "ReturnNull": _ReturnNull,
- "ReturnNumber": _ReturnNumber,
- "ReturnObject": _ReturnObject,
- "ReturnString": _ReturnString,
- "SetArrayBufferToOutValue": _SetArrayBufferToOutValue,
- "SetBigIntToOutValue": _SetBigIntToOutValue,
- "SetBooleanToOutValue": _SetBooleanToOutValue,
- "SetCallV8": _SetCallV8,
- "SetDateToOutValue": _SetDateToOutValue,
- "SetGeneralDestructor": _SetGeneralDestructor,
- "SetGlobalFunction": _SetGlobalFunction,
- "SetLogCallback": _SetLogCallback,
- "SetModuleResolver": _SetModuleResolver,
- "SetNullToOutValue": _SetNullToOutValue,
- "SetNumberToOutValue": _SetNumberToOutValue,
- "SetObjectToOutValue": _SetObjectToOutValue,
- "SetStringToOutValue": _SetStringToOutValue,
- "ThrowException": _ThrowException,
- "ValueIsBigInt": _ValueIsBigInt,
- "_RegisterClass": __RegisterClass,
  "__cxa_allocate_exception": ___cxa_allocate_exception,
  "__cxa_atexit": ___cxa_atexit,
  "__cxa_begin_catch": ___cxa_begin_catch,
@@ -14157,7 +13350,9 @@ var asmLibraryArg = {
  "invoke_fiiii": invoke_fiiii,
  "invoke_fiiiii": invoke_fiiiii,
  "invoke_i": invoke_i,
+ "invoke_idi": invoke_idi,
  "invoke_ii": invoke_ii,
+ "invoke_iidi": invoke_iidi,
  "invoke_iii": invoke_iii,
  "invoke_iiifi": invoke_iiifi,
  "invoke_iiii": invoke_iiii,
@@ -14172,9 +13367,6 @@ var asmLibraryArg = {
  "invoke_iiiiiiiiiii": invoke_iiiiiiiiiii,
  "invoke_iiiiiiiiiiiii": invoke_iiiiiiiiiiiii,
  "invoke_iiiiiiiiiji": invoke_iiiiiiiiiji,
- "invoke_iiiiiiji": invoke_iiiiiiji,
- "invoke_iiiiiijijii": invoke_iiiiiijijii,
- "invoke_iiiiji": invoke_iiiiji,
  "invoke_iiiijii": invoke_iiiijii,
  "invoke_iiij": invoke_iiij,
  "invoke_iiijiii": invoke_iiijiii,
@@ -14222,7 +13414,6 @@ var asmLibraryArg = {
  "invoke_viiiiiiiiifi": invoke_viiiiiiiiifi,
  "invoke_viiiiiiiiii": invoke_viiiiiiiiii,
  "invoke_viiiiiiiiiiiii": invoke_viiiiiiiiiiiii,
- "invoke_viiiiji": invoke_viiiiji,
  "invoke_viiij": invoke_viiij,
  "invoke_viiiji": invoke_viiiji,
  "invoke_viij": invoke_viij,
@@ -14232,7 +13423,6 @@ var asmLibraryArg = {
  "invoke_vijii": invoke_vijii,
  "invoke_vijiii": invoke_vijiii,
  "invoke_vji": invoke_vji,
- "invoke_vjiii": invoke_vjiii,
  "invoke_vjiiiii": invoke_vjiiiii,
  "invoke_vjjjiiii": invoke_vjjjiiii,
  "llvm_eh_typeid_for": _llvm_eh_typeid_for,
@@ -14593,99 +13783,95 @@ var dynCall_viffi = Module["dynCall_viffi"] = createExportWrapper("dynCall_viffi
 
 var dynCall_viiiiiiiijiii = Module["dynCall_viiiiiiiijiii"] = createExportWrapper("dynCall_viiiiiiiijiii");
 
-var dynCall_vijii = Module["dynCall_vijii"] = createExportWrapper("dynCall_vijii");
+var dynCall_diiii = Module["dynCall_diiii"] = createExportWrapper("dynCall_diiii");
 
 var dynCall_jiii = Module["dynCall_jiii"] = createExportWrapper("dynCall_jiii");
 
-var dynCall_iidi = Module["dynCall_iidi"] = createExportWrapper("dynCall_iidi");
-
-var dynCall_iiji = Module["dynCall_iiji"] = createExportWrapper("dynCall_iiji");
+var dynCall_fiii = Module["dynCall_fiii"] = createExportWrapper("dynCall_fiii");
 
 var dynCall_diii = Module["dynCall_diii"] = createExportWrapper("dynCall_diii");
 
-var dynCall_viiiifii = Module["dynCall_viiiifii"] = createExportWrapper("dynCall_viiiifii");
-
-var dynCall_viifffffi = Module["dynCall_viifffffi"] = createExportWrapper("dynCall_viifffffi");
-
-var dynCall_fifi = Module["dynCall_fifi"] = createExportWrapper("dynCall_fifi");
-
-var dynCall_fiii = Module["dynCall_fiii"] = createExportWrapper("dynCall_fiii");
-
-var dynCall_viiiiifffiii = Module["dynCall_viiiiifffiii"] = createExportWrapper("dynCall_viiiiifffiii");
-
-var dynCall_fiiiii = Module["dynCall_fiiiii"] = createExportWrapper("dynCall_fiiiii");
-
-var dynCall_fffi = Module["dynCall_fffi"] = createExportWrapper("dynCall_fffi");
-
-var dynCall_jiiiiiii = Module["dynCall_jiiiiiii"] = createExportWrapper("dynCall_jiiiiiii");
-
-var dynCall_diiiiiii = Module["dynCall_diiiiiii"] = createExportWrapper("dynCall_diiiiiii");
-
-var dynCall_fiiiiiii = Module["dynCall_fiiiiiii"] = createExportWrapper("dynCall_fiiiiiii");
-
-var dynCall_viiiiiiiiifi = Module["dynCall_viiiiiiiiifi"] = createExportWrapper("dynCall_viiiiiiiiifi");
-
-var dynCall_iiiifi = Module["dynCall_iiiifi"] = createExportWrapper("dynCall_iiiifi");
+var dynCall_vijii = Module["dynCall_vijii"] = createExportWrapper("dynCall_vijii");
 
 var dynCall_iiiiiiiiiji = Module["dynCall_iiiiiiiiiji"] = createExportWrapper("dynCall_iiiiiiiiiji");
 
 var dynCall_vji = Module["dynCall_vji"] = createExportWrapper("dynCall_vji");
 
+var dynCall_viiiiiiiiifi = Module["dynCall_viiiiiiiiifi"] = createExportWrapper("dynCall_viiiiiiiiifi");
+
+var dynCall_viiiifii = Module["dynCall_viiiifii"] = createExportWrapper("dynCall_viiiifii");
+
+var dynCall_vidi = Module["dynCall_vidi"] = createExportWrapper("dynCall_vidi");
+
 var dynCall_viiiiiiiiiiiii = Module["dynCall_viiiiiiiiiiiii"] = createExportWrapper("dynCall_viiiiiiiiiiiii");
+
+var dynCall_viiiiiiiiiiiiii = Module["dynCall_viiiiiiiiiiiiii"] = createExportWrapper("dynCall_viiiiiiiiiiiiii");
+
+var dynCall_viiiiiiiiiiiiiii = Module["dynCall_viiiiiiiiiiiiiii"] = createExportWrapper("dynCall_viiiiiiiiiiiiiii");
+
+var dynCall_viiiiiiiiiiiiiiii = Module["dynCall_viiiiiiiiiiiiiiii"] = createExportWrapper("dynCall_viiiiiiiiiiiiiiii");
+
+var dynCall_viiiiiiiiiiiiiiiii = Module["dynCall_viiiiiiiiiiiiiiiii"] = createExportWrapper("dynCall_viiiiiiiiiiiiiiiii");
+
+var dynCall_iiiifi = Module["dynCall_iiiifi"] = createExportWrapper("dynCall_iiiifi");
 
 var dynCall_fiiffi = Module["dynCall_fiiffi"] = createExportWrapper("dynCall_fiiffi");
 
 var dynCall_viiififii = Module["dynCall_viiififii"] = createExportWrapper("dynCall_viiififii");
 
+var dynCall_iiiiiiiiiiiiii = Module["dynCall_iiiiiiiiiiiiii"] = createExportWrapper("dynCall_iiiiiiiiiiiiii");
+
+var dynCall_iiiiiiiiiiiiiii = Module["dynCall_iiiiiiiiiiiiiii"] = createExportWrapper("dynCall_iiiiiiiiiiiiiii");
+
+var dynCall_iiiiiiiiiiiiiiii = Module["dynCall_iiiiiiiiiiiiiiii"] = createExportWrapper("dynCall_iiiiiiiiiiiiiiii");
+
+var dynCall_iiiiiiiiiiiiiiiii = Module["dynCall_iiiiiiiiiiiiiiiii"] = createExportWrapper("dynCall_iiiiiiiiiiiiiiiii");
+
+var dynCall_iiiiiiiiiiiiiiiiii = Module["dynCall_iiiiiiiiiiiiiiiiii"] = createExportWrapper("dynCall_iiiiiiiiiiiiiiiiii");
+
+var dynCall_iiiiiiiiiiiiiiiiiii = Module["dynCall_iiiiiiiiiiiiiiiiiii"] = createExportWrapper("dynCall_iiiiiiiiiiiiiiiiiii");
+
+var dynCall_fifi = Module["dynCall_fifi"] = createExportWrapper("dynCall_fifi");
+
 var dynCall_fiifi = Module["dynCall_fiifi"] = createExportWrapper("dynCall_fiifi");
 
 var dynCall_iiffi = Module["dynCall_iiffi"] = createExportWrapper("dynCall_iiffi");
 
-var dynCall_iiiiiji = Module["dynCall_iiiiiji"] = createExportWrapper("dynCall_iiiiiji");
+var dynCall_fiiiii = Module["dynCall_fiiiii"] = createExportWrapper("dynCall_fiiiii");
 
-var dynCall_viiiji = Module["dynCall_viiiji"] = createExportWrapper("dynCall_viiiji");
+var dynCall_iidi = Module["dynCall_iidi"] = createExportWrapper("dynCall_iidi");
 
-var dynCall_viiiiji = Module["dynCall_viiiiji"] = createExportWrapper("dynCall_viiiiji");
+var dynCall_iiji = Module["dynCall_iiji"] = createExportWrapper("dynCall_iiji");
 
-var dynCall_vjiii = Module["dynCall_vjiii"] = createExportWrapper("dynCall_vjiii");
+var dynCall_viifffffi = Module["dynCall_viifffffi"] = createExportWrapper("dynCall_viifffffi");
 
-var dynCall_iiiiji = Module["dynCall_iiiiji"] = createExportWrapper("dynCall_iiiiji");
+var dynCall_viiiiifffiii = Module["dynCall_viiiiifffiii"] = createExportWrapper("dynCall_viiiiifffiii");
 
-var dynCall_viidi = Module["dynCall_viidi"] = createExportWrapper("dynCall_viidi");
-
-var dynCall_iiiiiiji = Module["dynCall_iiiiiiji"] = createExportWrapper("dynCall_iiiiiiji");
-
-var dynCall_iiiiiijijii = Module["dynCall_iiiiiijijii"] = createExportWrapper("dynCall_iiiiiijijii");
-
-var dynCall_diiii = Module["dynCall_diiii"] = createExportWrapper("dynCall_diiii");
-
-var dynCall_jijiii = Module["dynCall_jijiii"] = createExportWrapper("dynCall_jijiii");
-
-var dynCall_dii = Module["dynCall_dii"] = createExportWrapper("dynCall_dii");
-
-var dynCall_iijji = Module["dynCall_iijji"] = createExportWrapper("dynCall_iijji");
-
-var dynCall_ijji = Module["dynCall_ijji"] = createExportWrapper("dynCall_ijji");
-
-var dynCall_iji = Module["dynCall_iji"] = createExportWrapper("dynCall_iji");
-
-var dynCall_jjji = Module["dynCall_jjji"] = createExportWrapper("dynCall_jjji");
-
-var dynCall_jiiiii = Module["dynCall_jiiiii"] = createExportWrapper("dynCall_jiiiii");
+var dynCall_fffi = Module["dynCall_fffi"] = createExportWrapper("dynCall_fffi");
 
 var dynCall_iiddi = Module["dynCall_iiddi"] = createExportWrapper("dynCall_iiddi");
 
-var dynCall_jiiiiiiiiii = Module["dynCall_jiiiiiiiiii"] = createExportWrapper("dynCall_jiiiiiiiiii");
+var dynCall_iijji = Module["dynCall_iijji"] = createExportWrapper("dynCall_iijji");
 
 var dynCall_viiij = Module["dynCall_viiij"] = createExportWrapper("dynCall_viiij");
 
 var dynCall_viiiifi = Module["dynCall_viiiifi"] = createExportWrapper("dynCall_viiiifi");
 
-var dynCall_viiiiidi = Module["dynCall_viiiiidi"] = createExportWrapper("dynCall_viiiiidi");
+var dynCall_dii = Module["dynCall_dii"] = createExportWrapper("dynCall_dii");
 
-var dynCall_vidi = Module["dynCall_vidi"] = createExportWrapper("dynCall_vidi");
+var dynCall_idi = Module["dynCall_idi"] = createExportWrapper("dynCall_idi");
+
+var dynCall_iji = Module["dynCall_iji"] = createExportWrapper("dynCall_iji");
+
+var dynCall_jjji = Module["dynCall_jjji"] = createExportWrapper("dynCall_jjji");
+
+var dynCall_jiiiiiiiiii = Module["dynCall_jiiiiiiiiii"] = createExportWrapper("dynCall_jiiiiiiiiii");
 
 var dynCall_jijj = Module["dynCall_jijj"] = createExportWrapper("dynCall_jijj");
+
+var dynCall_ijji = Module["dynCall_ijji"] = createExportWrapper("dynCall_ijji");
+
+var dynCall_jijiii = Module["dynCall_jijiii"] = createExportWrapper("dynCall_jijiii");
 
 var dynCall_viijiiiiii = Module["dynCall_viijiiiiii"] = createExportWrapper("dynCall_viijiiiiii");
 
@@ -14695,19 +13881,47 @@ var dynCall_vjjjiiii = Module["dynCall_vjjjiiii"] = createExportWrapper("dynCall
 
 var dynCall_vjiiiii = Module["dynCall_vjiiiii"] = createExportWrapper("dynCall_vjiiiii");
 
+var dynCall_jiiiii = Module["dynCall_jiiiii"] = createExportWrapper("dynCall_jiiiii");
+
+var dynCall_viiiji = Module["dynCall_viiiji"] = createExportWrapper("dynCall_viiiji");
+
 var dynCall_jijii = Module["dynCall_jijii"] = createExportWrapper("dynCall_jijii");
 
 var dynCall_vidii = Module["dynCall_vidii"] = createExportWrapper("dynCall_vidii");
 
+var dynCall_iiidi = Module["dynCall_iiidi"] = createExportWrapper("dynCall_iiidi");
+
+var dynCall_idii = Module["dynCall_idii"] = createExportWrapper("dynCall_idii");
+
+var dynCall_jji = Module["dynCall_jji"] = createExportWrapper("dynCall_jji");
+
+var dynCall_vjiii = Module["dynCall_vjiii"] = createExportWrapper("dynCall_vjiii");
+
+var dynCall_iijjjjji = Module["dynCall_iijjjjji"] = createExportWrapper("dynCall_iijjjjji");
+
+var dynCall_jjii = Module["dynCall_jjii"] = createExportWrapper("dynCall_jjii");
+
+var dynCall_ddi = Module["dynCall_ddi"] = createExportWrapper("dynCall_ddi");
+
+var dynCall_diji = Module["dynCall_diji"] = createExportWrapper("dynCall_diji");
+
+var dynCall_didi = Module["dynCall_didi"] = createExportWrapper("dynCall_didi");
+
+var dynCall_dddi = Module["dynCall_dddi"] = createExportWrapper("dynCall_dddi");
+
+var dynCall_dddddi = Module["dynCall_dddddi"] = createExportWrapper("dynCall_dddddi");
+
+var dynCall_ddddi = Module["dynCall_ddddi"] = createExportWrapper("dynCall_ddddi");
+
 var dynCall_iifiii = Module["dynCall_iifiii"] = createExportWrapper("dynCall_iifiii");
 
-var dynCall_viiiiiiiiiiiiii = Module["dynCall_viiiiiiiiiiiiii"] = createExportWrapper("dynCall_viiiiiiiiiiiiii");
+var dynCall_iiiiji = Module["dynCall_iiiiji"] = createExportWrapper("dynCall_iiiiji");
+
+var dynCall_iiiiiji = Module["dynCall_iiiiiji"] = createExportWrapper("dynCall_iiiiiji");
 
 var dynCall_viiijii = Module["dynCall_viiijii"] = createExportWrapper("dynCall_viiijii");
 
 var dynCall_vjii = Module["dynCall_vjii"] = createExportWrapper("dynCall_vjii");
-
-var dynCall_jji = Module["dynCall_jji"] = createExportWrapper("dynCall_jji");
 
 var dynCall_ijiiii = Module["dynCall_ijiiii"] = createExportWrapper("dynCall_ijiiii");
 
@@ -14905,29 +14119,9 @@ var dynCall_viiiiffffii = Module["dynCall_viiiiffffii"] = createExportWrapper("d
 
 var dynCall_fiiiiii = Module["dynCall_fiiiiii"] = createExportWrapper("dynCall_fiiiiii");
 
-var dynCall_iiiiiijiii = Module["dynCall_iiiiiijiii"] = createExportWrapper("dynCall_iiiiiijiii");
-
-var dynCall_iiiiijiii = Module["dynCall_iiiiijiii"] = createExportWrapper("dynCall_iiiiijiii");
-
-var dynCall_iiiiiijii = Module["dynCall_iiiiiijii"] = createExportWrapper("dynCall_iiiiiijii");
-
-var dynCall_diiiii = Module["dynCall_diiiii"] = createExportWrapper("dynCall_diiiii");
-
-var dynCall_jiiiiii = Module["dynCall_jiiiiii"] = createExportWrapper("dynCall_jiiiiii");
-
-var dynCall_viiiidi = Module["dynCall_viiiidi"] = createExportWrapper("dynCall_viiiidi");
-
-var dynCall_diiiiii = Module["dynCall_diiiiii"] = createExportWrapper("dynCall_diiiiii");
-
 var dynCall_jjiiii = Module["dynCall_jjiiii"] = createExportWrapper("dynCall_jjiiii");
 
 var dynCall_idiiii = Module["dynCall_idiiii"] = createExportWrapper("dynCall_idiiii");
-
-var dynCall_iiiiiiiiiiiiii = Module["dynCall_iiiiiiiiiiiiii"] = createExportWrapper("dynCall_iiiiiiiiiiiiii");
-
-var dynCall_idi = Module["dynCall_idi"] = createExportWrapper("dynCall_idi");
-
-var dynCall_jjii = Module["dynCall_jjii"] = createExportWrapper("dynCall_jjii");
 
 var dynCall_vijiiiiiii = Module["dynCall_vijiiiiiii"] = createExportWrapper("dynCall_vijiiiiiii");
 
@@ -14987,10 +14181,6 @@ var dynCall_ijiiiiji = Module["dynCall_ijiiiiji"] = createExportWrapper("dynCall
 
 var dynCall_ijjiii = Module["dynCall_ijjiii"] = createExportWrapper("dynCall_ijjiii");
 
-var dynCall_dddi = Module["dynCall_dddi"] = createExportWrapper("dynCall_dddi");
-
-var dynCall_ddi = Module["dynCall_ddi"] = createExportWrapper("dynCall_ddi");
-
 var dynCall_ddiii = Module["dynCall_ddiii"] = createExportWrapper("dynCall_ddiii");
 
 var dynCall_ddii = Module["dynCall_ddii"] = createExportWrapper("dynCall_ddii");
@@ -15023,8 +14213,6 @@ var dynCall_jijji = Module["dynCall_jijji"] = createExportWrapper("dynCall_jijji
 
 var dynCall_diddi = Module["dynCall_diddi"] = createExportWrapper("dynCall_diddi");
 
-var dynCall_didi = Module["dynCall_didi"] = createExportWrapper("dynCall_didi");
-
 var dynCall_viiiijii = Module["dynCall_viiiijii"] = createExportWrapper("dynCall_viiiijii");
 
 var dynCall_viiijji = Module["dynCall_viiijji"] = createExportWrapper("dynCall_viiijji");
@@ -15040,6 +14228,8 @@ var dynCall_vijiji = Module["dynCall_vijiji"] = createExportWrapper("dynCall_vij
 var dynCall_viijiijiii = Module["dynCall_viijiijiii"] = createExportWrapper("dynCall_viijiijiii");
 
 var dynCall_viiiijiiii = Module["dynCall_viiiijiiii"] = createExportWrapper("dynCall_viiiijiiii");
+
+var dynCall_jiiiiii = Module["dynCall_jiiiiii"] = createExportWrapper("dynCall_jiiiiii");
 
 var dynCall_viijjii = Module["dynCall_viijjii"] = createExportWrapper("dynCall_viijjii");
 
@@ -15057,7 +14247,7 @@ var dynCall_iiidiii = Module["dynCall_iiidiii"] = createExportWrapper("dynCall_i
 
 var dynCall_iidii = Module["dynCall_iidii"] = createExportWrapper("dynCall_iidii");
 
-var dynCall_iiiiiidiii = Module["dynCall_iiiiiidiii"] = createExportWrapper("dynCall_iiiiiidiii");
+var dynCall_viidi = Module["dynCall_viidi"] = createExportWrapper("dynCall_viidi");
 
 var dynCall_iiiiffiiiji = Module["dynCall_iiiiffiiiji"] = createExportWrapper("dynCall_iiiiffiiiji");
 
@@ -15342,10 +14532,10 @@ function invoke_viid(index, a1, a2, a3) {
  }
 }
 
-function invoke_fiiii(index, a1, a2, a3, a4) {
+function invoke_fii(index, a1, a2) {
  var sp = stackSave();
  try {
-  return dynCall_fiiii(index, a1, a2, a3, a4);
+  return dynCall_fii(index, a1, a2);
  } catch (e) {
   stackRestore(sp);
   if (e !== e + 0 && e !== "longjmp") throw e;
@@ -15364,10 +14554,10 @@ function invoke_viifi(index, a1, a2, a3, a4) {
  }
 }
 
-function invoke_viiff(index, a1, a2, a3, a4) {
+function invoke_diiii(index, a1, a2, a3, a4) {
  var sp = stackSave();
  try {
-  dynCall_viiff(index, a1, a2, a3, a4);
+  return dynCall_diiii(index, a1, a2, a3, a4);
  } catch (e) {
   stackRestore(sp);
   if (e !== e + 0 && e !== "longjmp") throw e;
@@ -15386,10 +14576,10 @@ function invoke_fi(index, a1) {
  }
 }
 
-function invoke_iiifi(index, a1, a2, a3, a4) {
+function invoke_vifi(index, a1, a2, a3) {
  var sp = stackSave();
  try {
-  return dynCall_iiifi(index, a1, a2, a3, a4);
+  dynCall_vifi(index, a1, a2, a3);
  } catch (e) {
   stackRestore(sp);
   if (e !== e + 0 && e !== "longjmp") throw e;
@@ -15430,10 +14620,76 @@ function invoke_vidi(index, a1, a2, a3) {
  }
 }
 
-function invoke_fii(index, a1, a2) {
+function invoke_viiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8) {
  var sp = stackSave();
  try {
-  return dynCall_fii(index, a1, a2);
+  dynCall_viiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8);
+ } catch (e) {
+  stackRestore(sp);
+  if (e !== e + 0 && e !== "longjmp") throw e;
+  _setThrew(1, 0);
+ }
+}
+
+function invoke_viiiiiiiiifi(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11) {
+ var sp = stackSave();
+ try {
+  dynCall_viiiiiiiiifi(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+ } catch (e) {
+  stackRestore(sp);
+  if (e !== e + 0 && e !== "longjmp") throw e;
+  _setThrew(1, 0);
+ }
+}
+
+function invoke_fiiii(index, a1, a2, a3, a4) {
+ var sp = stackSave();
+ try {
+  return dynCall_fiiii(index, a1, a2, a3, a4);
+ } catch (e) {
+  stackRestore(sp);
+  if (e !== e + 0 && e !== "longjmp") throw e;
+  _setThrew(1, 0);
+ }
+}
+
+function invoke_iiifi(index, a1, a2, a3, a4) {
+ var sp = stackSave();
+ try {
+  return dynCall_iiifi(index, a1, a2, a3, a4);
+ } catch (e) {
+  stackRestore(sp);
+  if (e !== e + 0 && e !== "longjmp") throw e;
+  _setThrew(1, 0);
+ }
+}
+
+function invoke_viiiiiiiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13) {
+ var sp = stackSave();
+ try {
+  dynCall_viiiiiiiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+ } catch (e) {
+  stackRestore(sp);
+  if (e !== e + 0 && e !== "longjmp") throw e;
+  _setThrew(1, 0);
+ }
+}
+
+function invoke_viiif(index, a1, a2, a3, a4) {
+ var sp = stackSave();
+ try {
+  dynCall_viiif(index, a1, a2, a3, a4);
+ } catch (e) {
+  stackRestore(sp);
+  if (e !== e + 0 && e !== "longjmp") throw e;
+  _setThrew(1, 0);
+ }
+}
+
+function invoke_viiifi(index, a1, a2, a3, a4, a5) {
+ var sp = stackSave();
+ try {
+  dynCall_viiifi(index, a1, a2, a3, a4, a5);
  } catch (e) {
   stackRestore(sp);
   if (e !== e + 0 && e !== "longjmp") throw e;
@@ -15474,32 +14730,10 @@ function invoke_viiiiifffiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11
  }
 }
 
-function invoke_vifi(index, a1, a2, a3) {
- var sp = stackSave();
- try {
-  dynCall_vifi(index, a1, a2, a3);
- } catch (e) {
-  stackRestore(sp);
-  if (e !== e + 0 && e !== "longjmp") throw e;
-  _setThrew(1, 0);
- }
-}
-
 function invoke_fiiiii(index, a1, a2, a3, a4, a5) {
  var sp = stackSave();
  try {
   return dynCall_fiiiii(index, a1, a2, a3, a4, a5);
- } catch (e) {
-  stackRestore(sp);
-  if (e !== e + 0 && e !== "longjmp") throw e;
-  _setThrew(1, 0);
- }
-}
-
-function invoke_viiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8) {
- var sp = stackSave();
- try {
-  dynCall_viiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8);
  } catch (e) {
   stackRestore(sp);
   if (e !== e + 0 && e !== "longjmp") throw e;
@@ -15518,54 +14752,10 @@ function invoke_fffi(index, a1, a2, a3) {
  }
 }
 
-function invoke_viiif(index, a1, a2, a3, a4) {
+function invoke_viiff(index, a1, a2, a3, a4) {
  var sp = stackSave();
  try {
-  dynCall_viiif(index, a1, a2, a3, a4);
- } catch (e) {
-  stackRestore(sp);
-  if (e !== e + 0 && e !== "longjmp") throw e;
-  _setThrew(1, 0);
- }
-}
-
-function invoke_viiifi(index, a1, a2, a3, a4, a5) {
- var sp = stackSave();
- try {
-  dynCall_viiifi(index, a1, a2, a3, a4, a5);
- } catch (e) {
-  stackRestore(sp);
-  if (e !== e + 0 && e !== "longjmp") throw e;
-  _setThrew(1, 0);
- }
-}
-
-function invoke_viiiiiiiiifi(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11) {
- var sp = stackSave();
- try {
-  dynCall_viiiiiiiiifi(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
- } catch (e) {
-  stackRestore(sp);
-  if (e !== e + 0 && e !== "longjmp") throw e;
-  _setThrew(1, 0);
- }
-}
-
-function invoke_viiiiiiiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13) {
- var sp = stackSave();
- try {
-  dynCall_viiiiiiiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
- } catch (e) {
-  stackRestore(sp);
-  if (e !== e + 0 && e !== "longjmp") throw e;
-  _setThrew(1, 0);
- }
-}
-
-function invoke_diiii(index, a1, a2, a3, a4) {
- var sp = stackSave();
- try {
-  return dynCall_diiii(index, a1, a2, a3, a4);
+  dynCall_viiff(index, a1, a2, a3, a4);
  } catch (e) {
   stackRestore(sp);
   if (e !== e + 0 && e !== "longjmp") throw e;
@@ -15584,6 +14774,28 @@ function invoke_iiiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8) {
  }
 }
 
+function invoke_viiiifi(index, a1, a2, a3, a4, a5, a6) {
+ var sp = stackSave();
+ try {
+  dynCall_viiiifi(index, a1, a2, a3, a4, a5, a6);
+ } catch (e) {
+  stackRestore(sp);
+  if (e !== e + 0 && e !== "longjmp") throw e;
+  _setThrew(1, 0);
+ }
+}
+
+function invoke_iidi(index, a1, a2, a3) {
+ var sp = stackSave();
+ try {
+  return dynCall_iidi(index, a1, a2, a3);
+ } catch (e) {
+  stackRestore(sp);
+  if (e !== e + 0 && e !== "longjmp") throw e;
+  _setThrew(1, 0);
+ }
+}
+
 function invoke_dii(index, a1, a2) {
  var sp = stackSave();
  try {
@@ -15595,10 +14807,10 @@ function invoke_dii(index, a1, a2) {
  }
 }
 
-function invoke_viiiifi(index, a1, a2, a3, a4, a5, a6) {
+function invoke_idi(index, a1, a2) {
  var sp = stackSave();
  try {
-  dynCall_viiiifi(index, a1, a2, a3, a4, a5, a6);
+  return dynCall_idi(index, a1, a2);
  } catch (e) {
   stackRestore(sp);
   if (e !== e + 0 && e !== "longjmp") throw e;
@@ -15727,17 +14939,6 @@ function invoke_jjji(index, a1, a2, a3, a4, a5) {
  }
 }
 
-function invoke_vijii(index, a1, a2, a3, a4, a5) {
- var sp = stackSave();
- try {
-  dynCall_vijii(index, a1, a2, a3, a4, a5);
- } catch (e) {
-  stackRestore(sp);
-  if (e !== e + 0 && e !== "longjmp") throw e;
-  _setThrew(1, 0);
- }
-}
-
 function invoke_viiji(index, a1, a2, a3, a4, a5) {
  var sp = stackSave();
  try {
@@ -15771,10 +14972,10 @@ function invoke_jiii(index, a1, a2, a3) {
  }
 }
 
-function invoke_viiiji(index, a1, a2, a3, a4, a5, a6) {
+function invoke_vijii(index, a1, a2, a3, a4, a5) {
  var sp = stackSave();
  try {
-  dynCall_viiiji(index, a1, a2, a3, a4, a5, a6);
+  dynCall_vijii(index, a1, a2, a3, a4, a5);
  } catch (e) {
   stackRestore(sp);
   if (e !== e + 0 && e !== "longjmp") throw e;
@@ -15804,10 +15005,10 @@ function invoke_vji(index, a1, a2, a3) {
  }
 }
 
-function invoke_viiiiji(index, a1, a2, a3, a4, a5, a6, a7) {
+function invoke_viiiji(index, a1, a2, a3, a4, a5, a6) {
  var sp = stackSave();
  try {
-  dynCall_viiiiji(index, a1, a2, a3, a4, a5, a6, a7);
+  dynCall_viiiji(index, a1, a2, a3, a4, a5, a6);
  } catch (e) {
   stackRestore(sp);
   if (e !== e + 0 && e !== "longjmp") throw e;
@@ -15815,10 +15016,10 @@ function invoke_viiiiji(index, a1, a2, a3, a4, a5, a6, a7) {
  }
 }
 
-function invoke_vjiii(index, a1, a2, a3, a4, a5) {
+function invoke_viiij(index, a1, a2, a3, a4, a5) {
  var sp = stackSave();
  try {
-  dynCall_vjiii(index, a1, a2, a3, a4, a5);
+  dynCall_viiij(index, a1, a2, a3, a4, a5);
  } catch (e) {
   stackRestore(sp);
   if (e !== e + 0 && e !== "longjmp") throw e;
@@ -15826,10 +15027,10 @@ function invoke_vjiii(index, a1, a2, a3, a4, a5) {
  }
 }
 
-function invoke_iiiiji(index, a1, a2, a3, a4, a5, a6) {
+function invoke_jiiiiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10) {
  var sp = stackSave();
  try {
-  return dynCall_iiiiji(index, a1, a2, a3, a4, a5, a6);
+  return dynCall_jiiiiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
  } catch (e) {
   stackRestore(sp);
   if (e !== e + 0 && e !== "longjmp") throw e;
@@ -15837,10 +15038,10 @@ function invoke_iiiiji(index, a1, a2, a3, a4, a5, a6) {
  }
 }
 
-function invoke_iiiiiiji(index, a1, a2, a3, a4, a5, a6, a7, a8) {
+function invoke_jijj(index, a1, a2, a3, a4, a5) {
  var sp = stackSave();
  try {
-  return dynCall_iiiiiiji(index, a1, a2, a3, a4, a5, a6, a7, a8);
+  return dynCall_jijj(index, a1, a2, a3, a4, a5);
  } catch (e) {
   stackRestore(sp);
   if (e !== e + 0 && e !== "longjmp") throw e;
@@ -15848,10 +15049,32 @@ function invoke_iiiiiiji(index, a1, a2, a3, a4, a5, a6, a7, a8) {
  }
 }
 
-function invoke_iiiiiijijii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12) {
+function invoke_ijji(index, a1, a2, a3, a4, a5) {
  var sp = stackSave();
  try {
-  return dynCall_iiiiiijijii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+  return dynCall_ijji(index, a1, a2, a3, a4, a5);
+ } catch (e) {
+  stackRestore(sp);
+  if (e !== e + 0 && e !== "longjmp") throw e;
+  _setThrew(1, 0);
+ }
+}
+
+function invoke_jiji(index, a1, a2, a3, a4) {
+ var sp = stackSave();
+ try {
+  return dynCall_jiji(index, a1, a2, a3, a4);
+ } catch (e) {
+  stackRestore(sp);
+  if (e !== e + 0 && e !== "longjmp") throw e;
+  _setThrew(1, 0);
+ }
+}
+
+function invoke_iijji(index, a1, a2, a3, a4, a5, a6) {
+ var sp = stackSave();
+ try {
+  return dynCall_iijji(index, a1, a2, a3, a4, a5, a6);
  } catch (e) {
   stackRestore(sp);
   if (e !== e + 0 && e !== "longjmp") throw e;
@@ -15903,83 +15126,6 @@ function invoke_viij(index, a1, a2, a3, a4) {
  }
 }
 
-function invoke_ijji(index, a1, a2, a3, a4, a5) {
- var sp = stackSave();
- try {
-  return dynCall_ijji(index, a1, a2, a3, a4, a5);
- } catch (e) {
-  stackRestore(sp);
-  if (e !== e + 0 && e !== "longjmp") throw e;
-  _setThrew(1, 0);
- }
-}
-
-function invoke_jiji(index, a1, a2, a3, a4) {
- var sp = stackSave();
- try {
-  return dynCall_jiji(index, a1, a2, a3, a4);
- } catch (e) {
-  stackRestore(sp);
-  if (e !== e + 0 && e !== "longjmp") throw e;
-  _setThrew(1, 0);
- }
-}
-
-function invoke_iijji(index, a1, a2, a3, a4, a5, a6) {
- var sp = stackSave();
- try {
-  return dynCall_iijji(index, a1, a2, a3, a4, a5, a6);
- } catch (e) {
-  stackRestore(sp);
-  if (e !== e + 0 && e !== "longjmp") throw e;
-  _setThrew(1, 0);
- }
-}
-
-function invoke_jiiiii(index, a1, a2, a3, a4, a5) {
- var sp = stackSave();
- try {
-  return dynCall_jiiiii(index, a1, a2, a3, a4, a5);
- } catch (e) {
-  stackRestore(sp);
-  if (e !== e + 0 && e !== "longjmp") throw e;
-  _setThrew(1, 0);
- }
-}
-
-function invoke_jiiiiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10) {
- var sp = stackSave();
- try {
-  return dynCall_jiiiiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
- } catch (e) {
-  stackRestore(sp);
-  if (e !== e + 0 && e !== "longjmp") throw e;
-  _setThrew(1, 0);
- }
-}
-
-function invoke_viiij(index, a1, a2, a3, a4, a5) {
- var sp = stackSave();
- try {
-  dynCall_viiij(index, a1, a2, a3, a4, a5);
- } catch (e) {
-  stackRestore(sp);
-  if (e !== e + 0 && e !== "longjmp") throw e;
-  _setThrew(1, 0);
- }
-}
-
-function invoke_jijj(index, a1, a2, a3, a4, a5) {
- var sp = stackSave();
- try {
-  return dynCall_jijj(index, a1, a2, a3, a4, a5);
- } catch (e) {
-  stackRestore(sp);
-  if (e !== e + 0 && e !== "longjmp") throw e;
-  _setThrew(1, 0);
- }
-}
-
 function invoke_vijiii(index, a1, a2, a3, a4, a5, a6) {
  var sp = stackSave();
  try {
@@ -16017,6 +15163,17 @@ function invoke_viijiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10) {
  var sp = stackSave();
  try {
   dynCall_viijiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+ } catch (e) {
+  stackRestore(sp);
+  if (e !== e + 0 && e !== "longjmp") throw e;
+  _setThrew(1, 0);
+ }
+}
+
+function invoke_jiiiii(index, a1, a2, a3, a4, a5) {
+ var sp = stackSave();
+ try {
+  return dynCall_jiiiii(index, a1, a2, a3, a4, a5);
  } catch (e) {
   stackRestore(sp);
   if (e !== e + 0 && e !== "longjmp") throw e;
