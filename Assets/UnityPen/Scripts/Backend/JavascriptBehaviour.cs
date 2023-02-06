@@ -1,148 +1,70 @@
 ﻿using System;
 using System.Reflection;
-using Puerts;
+using Jint;
+using Jint.Native;
 using UnityEngine;
 using UnityPen;
 
 namespace UnityPen
 {
-    public delegate void ModuleInit(JavascriptBehaviour monoBehaviour);
 
-    public class DefaultOrMemoryLoader : ILoader, IModuleChecker
+    class ASD
     {
-        private string root = "";
-        private string code = "";
-
-        public DefaultOrMemoryLoader()
+        public void Log()
         {
+            Debug.Log("ZZ");
         }
+    }
+    public class JavascriptBehaviour : MonoBehaviour
+    {
+        [Multiline] public string code;
+        private Jint.Engine engine; 
+        
+        public JsValue JsUpdate;
+        public JsValue JSStart;
 
-        public DefaultOrMemoryLoader(string code)
+
+        void UpdateEngineContext(string code)
         {
-            this.code = code;
-        }
-
-        private string PathToUse(string filepath)
-        {
-            return
-                // .cjs asset is only supported in unity2018+
-#if UNITY_2018_1_OR_NEWER
-                filepath.EndsWith(".cjs") || filepath.EndsWith(".mjs")
-                    ? filepath.Substring(0, filepath.Length - 4)
-                    :
-#endif
-                    filepath;
-        }
-
-
-        public bool FileExists(string filepath)
-        {
-#if PUERTS_GENERAL
-            return File.Exists(Path.Combine(root, filepath));
-#else 
-            string pathToUse = this.PathToUse(filepath);
-            bool exist = UnityEngine.Resources.Load(pathToUse) != null;
-#if !PUERTS_GENERAL && UNITY_EDITOR && !UNITY_2018_1_OR_NEWER
-            if (!exist) 
+            engine = new Engine(cfg =>
             {
-                UnityEngine.Debug.LogWarning("【Puerts】unity 2018- is using, if you found some js is not exist, rename *.cjs,*.mjs in the resources dir with *.cjs.txt,*.mjs.txt");
-            }
-#endif
-            return exist;
-#endif
+                cfg.AllowClr(typeof(Vector3).Assembly);
+                cfg.AllowClr(typeof(GameObject).Assembly); 
+            });     
+            // 값의 설정은 미리한다.
+            engine.SetValue(nameof(Debug.Log), new Action<object>(Debug.Log)); 
+            engine.SetValue(nameof(Mathf), typeof(Mathf));
+            engine.SetValue(nameof(Vector3), typeof(Vector3));
+            engine.SetValue(nameof(GameObject), typeof(GameObject));  
+            engine.SetValue(nameof(Time), typeof(Time));  
+            engine.SetValue("self", (this as object));  
+            engine.Execute(code); 
+            // 가져오는것은 Execute 후.
+            this.JsUpdate = engine.GetValue("onUpdate");
+            this.JSStart = engine.GetValue("onStart");
+             
         }
-
-        public string ReadFile(string filepath, out string debugpath)
-        { 
-#if PUERTS_GENERAL
-            debugpath = Path.Combine(root, filepath);
-            return File.ReadAllText(debugpath);
-#else 
-            string pathToUse = this.PathToUse(filepath);
-            UnityEngine.TextAsset file = (UnityEngine.TextAsset)UnityEngine.Resources.Load(pathToUse);
-            
-            debugpath = System.IO.Path.Combine(root, filepath);
-#if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
-            debugpath = debugpath.Replace("/", "\\");
-#endif
-            Debug.Log(code);
-            Debug.Log(debugpath);
-            return file == null ? null : file.text;
-#endif
-        }
-
-
-        public bool IsESM(string filepath)
+        void Awake()
         {
-            return filepath.Length >= 4 && filepath.EndsWith(".mjs");
+            UpdateEngineContext(this.code);
         }
-    }
-}
 
-public class JavascriptBehaviour : MonoBehaviour
-{
-    [Multiline]
-    public string code;
-    private JsEnv env;
-    public Action JsStart;
-    public Action JsUpdate;
-    public Action JsOnDestroy;
-    private static int debugPort = 8500;
 
-    void Awake()
-    {
-        var loader = new DefaultLoader();
-        env = new JsEnv(loader, debugPort);
-
- 
-        // 파일을 불러온후 export된 init함수를 가져와 호출한다.
-        var init = env.Eval<ModuleInit>(code);
-        if (init != null)
-            init(this); // js -> C# binding  
-    }
-
-    public void Eval(string code)
-    {
-        // 모듈을 불러온다.
-        var loader = new DefaultLoader();
-        var newEnv = new JsEnv(loader, debugPort);
-        ModuleInit init = null;
-        try
+        public void Eval(string code)
         {
-            // 모듈을 평가한다.
-            init = newEnv.Eval<ModuleInit>(code); 
-            // 기존 env는 지운다.
-            if (env != null)
-            {
-                env.Dispose();
-                env = null;
-                this.JsStart = null;
-                this.JsUpdate = null;
-                this.JsOnDestroy = null;
-            }  
+            UpdateEngineContext(code); 
         }
-        catch (Exception e)
-        {
-            Debug.LogError(e);
-        }
-        finally
-        {
-            // 모듈이 문제없으면 초기화한다.
-            if (init != null)
-            { 
-                init(this);
-            }
-        }
-    
-    }
 
-    private void Start()
-    {
-        if (JsStart != null) JsStart();
-    }
+        private void Start()
+        {
+            if (JSStart != null)
+                JSStart.Invoke();
+        }
 
-    private void Update()
-    {
-        if (JsUpdate != null) JsUpdate();
+        private void Update()
+        {
+            if (JsUpdate != null)
+                JsUpdate.Invoke();
+        }
     }
 }

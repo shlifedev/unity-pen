@@ -41,8 +41,7 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.tencent.puerts.webgl": "1.0.0-rc.1"
+    "com.unity.modules.xr": "1.0.0"
   },
   "scopedRegistries": [
     {

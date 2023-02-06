@@ -250,15 +250,11 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: "const rotate = 30; \r\nconst Vector3 = CS.UnityEngine.Vector3;\r\nconst
-    Mathf = CS.UnityEngine.Mathf;\r\nconst Time = CS.UnityEngine.Time;\r\nclass Cube
-    {\r\n  /**\r\n   * @param {CS.UnityPen.Scripts.JavascriptBehaviour} self\r\n  
-    */\r\n  constructor(self) {\r\n    this.self = self;\r\n    this.self.JsStart
-    = () => this.onStart();\r\n    this.self.JsUpdate = () => this.onUpdate();\r\n 
-    }\r\n\r\n  onStart() {}\r\n\r\n  onUpdate() {  \r\n    this.self.transform.Rotate(new
-    CS.UnityEngine.Vector3(rotate * CS.UnityEngine.Time.deltaTime, 0, 0));   \r\n   
-    this.self.transform.position = new Vector3(Mathf.Sin(Time.realtimeSinceStartup),
-    0, 0);\r\n  }\r\n}\r\n\r\n(function(self) {\r\n  new Cube(self);\r\n}) "
+  m_Text: "const rotate = 10; \r\n\r\n\r\nfunction onStart() {\r\n   Log(\"Hi I want
+    a+b! \" , a + b);\r\n}\r\n\r\nfunction onUpdate() { \r\n   const speed = rotate
+    * Time.deltaTime; \r\n   self.transform.Rotate(new Vector3(speed * 4,speed *
+    0.5,speed * 3));\r\n   self.transform.position = new Vector3(Mathf.Sin(Time.realtimeSinceStartup
+    * 2), 0, Mathf.Cos(Time.realtimeSinceStartup  * 2));\r\n}"
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -714,15 +710,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "const rotate = 30; \r\nconst Vector3 = CS.UnityEngine.Vector3;\r\nconst
-    Mathf = CS.UnityEngine.Mathf;\r\nconst Time = CS.UnityEngine.Time;\r\nclass Cube
-    {\r\n  /**\r\n   * @param {CS.UnityPen.Scripts.JavascriptBehaviour} self\r\n  
-    */\r\n  constructor(self) {\r\n    this.self = self;\r\n    this.self.JsStart
-    = () => this.onStart();\r\n    this.self.JsUpdate = () => this.onUpdate();\r\n 
-    }\r\n\r\n  onStart() {}\r\n\r\n  onUpdate() {  \r\n    this.self.transform.Rotate(new
-    CS.UnityEngine.Vector3(rotate * CS.UnityEngine.Time.deltaTime, 0, 0));   \r\n   
-    this.self.transform.position = new Vector3(Mathf.Sin(Time.realtimeSinceStartup),
-    0, 0);\r\n  }\r\n}\r\n\r\n(function(self) {\r\n  new Cube(self);\r\n}) \u200B"
+  m_text: "const rotate = 10; \r\n\r\n\r\nfunction onStart() {\r\n   Log(\"Hi I want
+    a+b! \" , a + b);\r\n}\r\n\r\nfunction onUpdate() { \r\n   const speed = rotate
+    * Time.deltaTime; \r\n   self.transform.Rotate(new Vector3(speed * 4,speed *
+    0.5,speed * 3));\r\n   self.transform.position = new Vector3(Mathf.Sin(Time.realtimeSinceStartup
+    * 2), 0, Mathf.Cos(Time.realtimeSinceStartup  * 2));\r\n}\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -749,8 +741,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1133,7 +1125,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.39215687, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1842,7 +1834,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 595988d5e920bb44681167d489b1c52b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1899,12 +1891,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05b13913f2f4d4ca139eb2c71451614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  code: "const rotate = 30; \r\nconst Vector3 = CS.UnityEngine.Vector3;\r\nconst
-    Mathf = CS.UnityEngine.Mathf;\r\nconst Time = CS.UnityEngine.Time;\r\nclass Cube
-    {\r\n  /**\r\n   * @param {CS.UnityPen.Scripts.JavascriptBehaviour} self\r\n  
-    */\r\n  constructor(self) {\r\n    this.self = self;\r\n    this.self.JsStart
-    = () => this.onStart();\r\n    this.self.JsUpdate = () => this.onUpdate();\r\n 
-    }\r\n\r\n  onStart() {}\r\n\r\n  onUpdate() {  \r\n    this.self.transform.Rotate(new
-    CS.UnityEngine.Vector3(rotate * CS.UnityEngine.Time.deltaTime, 0, 0));   \r\n   
-    this.self.transform.position = new Vector3(Mathf.Sin(Time.realtimeSinceStartup),
-    0, 0);\r\n  }\r\n}\r\n\r\n(function(self) {\r\n  new Cube(self);\r\n}) "
+  code: "const rotate = 10; \r\n\r\n\r\nfunction onStart() {\r\n   Log(\"Hi I want
+    a+b! \" , a + b);\r\n}\r\n\r\nfunction onUpdate() { \r\n   const speed = rotate
+    * Time.deltaTime; \r\n   self.transform.Rotate(new Vector3(speed * 4,speed *
+    0.5,speed * 3));\r\n   self.transform.position = new Vector3(Mathf.Sin(Time.realtimeSinceStartup
+    * 2), 0, Mathf.Cos(Time.realtimeSinceStartup  * 2));\r\n}"

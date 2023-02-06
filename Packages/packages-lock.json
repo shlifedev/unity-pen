@@ -1,21 +1,5 @@
 {
   "dependencies": {
-    "com.tencent.puerts.core": {
-      "version": "1.4.0",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://package.openupm.com"
-    },
-    "com.tencent.puerts.webgl": {
-      "version": "1.0.0-rc.1",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.tencent.puerts.core": "1.4.0"
-      },
-      "url": "https://package.openupm.com"
-    },
     "com.unity.2d.animation": {
       "version": "7.0.9",
       "depth": 1,
