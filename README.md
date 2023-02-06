@@ -8,7 +8,7 @@
 You can write a simple unity project like [codepen](https://codepen.io/about/)
 
 I have some plan below. (TODO LIST)
-- Purets WebGL Intergration
+- Convert Jint to Purets
 - Virtual File System 
 - Better Runtime Code Editor With SyntaxHighlight
 
