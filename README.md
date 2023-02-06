@@ -4,7 +4,7 @@
 
 ### [WebGL Demo](https://shlifedev.github.io/unity-pen/) 
 
-**This is just minimal idea test.** 
+**This is useful for minimal idea test.**   
 You can write a simple unity project like [codepen](https://codepen.io/about/)
 
 I have some plan below. (TODO LIST)
