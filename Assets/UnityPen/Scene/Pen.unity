@@ -250,7 +250,13 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: "function update()\n print(\"A\");\nend"
+  m_Text: "local Vector3 = CS.UnityEngine.Vector3; \nlocal Mathf = CS.UnityEngine.Mathf;\nlocal
+    Time = CS.UnityEngine.Time;\nlocal Quaternion  = CS.UnityEngine.Quaternion;\nlocal
+    t = 0;\nlocal rotSpeed = 30;\nlocal circle = 2;\nfunction update()  \n self.transform.position
+    = Vector3(Mathf.Sin(t), 0, Mathf.Cos(t)) * circle; \n local zRot =  self.transform.eulerAngles.z;
+    \n local zRot =  self.transform.eulerAngles.x; \n zRot = zRot + rotSpeed * Time.deltaTime;\n
+    xRot = xRot + rotSpeed * Time.deltaTime;\n self.transform.rotation =  Quaternion.Euler(xRot,0,
+    zRot);\n t = Time.realtimeSinceStartup ;\nend"
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -705,7 +711,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "function update()\n print(\"A\");\nend\u200B"
+  m_text: "local Vector3 = CS.UnityEngine.Vector3; \nlocal Mathf = CS.UnityEngine.Mathf;\nlocal
+    Time = CS.UnityEngine.Time;\nlocal Quaternion  = CS.UnityEngine.Quaternion;\nlocal
+    t = 0;\nlocal rotSpeed = 30;\nlocal circle = 2;\nfunction update()  \n self.transform.position
+    = Vector3(Mathf.Sin(t), 0, Mathf.Cos(t)) * circle; \n local zRot =  self.transform.eulerAngles.z;
+    \n local zRot =  self.transform.eulerAngles.x; \n zRot = zRot + rotSpeed * Time.deltaTime;\n
+    xRot = xRot + rotSpeed * Time.deltaTime;\n self.transform.rotation =  Quaternion.Euler(xRot,0,
+    zRot);\n t = Time.realtimeSinceStartup ;\nend\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1870,4 +1882,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   code: 
-  mark: 0

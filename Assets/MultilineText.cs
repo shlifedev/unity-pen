@@ -39,7 +39,7 @@ public class MultilineText : MonoBehaviour
             if(current != null)
                 StopCoroutine(current);
             current = StartCoroutine(this.Eval(x)); 
-        });
+        }); 
         GameObject.Find("TestCube").GetComponent<LuaBehaviour>().Eval(this.field.text); 
      }
 

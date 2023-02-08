@@ -33,7 +33,7 @@ public class LuaBehaviour : MonoBehaviour
  
 
     public IEnumerator CollectGc()
-    {
+    { 
         while (true)
         {
             yield return new WaitForSeconds(1);
