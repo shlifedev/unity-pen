@@ -24,26 +24,24 @@ public class AstVisitorSyntaxHighlight : AstVisitor
 public class MultilineText : MonoBehaviour
 {
     public TMPro.TMP_InputField field;  
-    private StringBuilder sb;
+    
     private Coroutine current;
     public IEnumerator Eval(string text)
     {
         yield return new WaitForSeconds(.5f);
-        GameObject.Find("TestCube").GetComponent<JavascriptBehaviour>().Eval(text); 
+        GameObject.Find("TestCube").GetComponent<LuaBehaviour>().Eval(text); 
     }
     void Start()
-    {
-        
-        sb = new StringBuilder(field.text); 
-        UpdateSyntaxHighlight(); 
+    { 
+        //UpdateSyntaxHighlight(); 
         field.onValueChanged.AddListener(x =>
         {  
             if(current != null)
                 StopCoroutine(current);
             current = StartCoroutine(this.Eval(x)); 
         });
-        GameObject.Find("TestCube").GetComponent<JavascriptBehaviour>().Eval(this.field.text);
-    }
+        GameObject.Find("TestCube").GetComponent<LuaBehaviour>().Eval(this.field.text); 
+     }
 
  
     void UpdateSyntaxHighlight()

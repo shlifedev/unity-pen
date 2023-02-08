@@ -250,22 +250,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 'function onStart(){
-
-
-    }
-
-
-    function onUpdate(){
-
-
-    }
-
-    function
-    onChanged(){
-
-
-    }'
+  m_Text: "function update()\n print(\"A\");\nend"
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -720,7 +705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "function onStart(){\n\n}\n\nfunction onUpdate(){\n\n}\nfunction onChanged(){\n\n}\u200B"
+  m_text: "function update()\n print(\"A\");\nend\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1786,7 +1771,7 @@ GameObject:
   - component: {fileID: 2137918445}
   - component: {fileID: 2137918444}
   - component: {fileID: 2137918443}
-  - component: {fileID: 2137918449}
+  - component: {fileID: 2137918447}
   m_Layer: 0
   m_Name: TestCube
   m_TagString: Untagged
@@ -1872,7 +1857,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2137918449
+--- !u!114 &2137918447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1881,7 +1866,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2137918442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c05b13913f2f4d4ca139eb2c71451614, type: 3}
+  m_Script: {fileID: 11500000, guid: aa4245def64d56f489ec42f0ceecebb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   code: 
+  mark: 0

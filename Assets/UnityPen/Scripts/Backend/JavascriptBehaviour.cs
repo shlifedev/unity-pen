@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
+using System.Collections.Generic; 
 using Jint;
-using Jint.Native;
-using Jint.Runtime.Interop;
-using Jint.Runtime.References;
-using Unity.Mathematics;
-using Unity.VisualScripting;
-using UnityEditorInternal.VersionControl;
-using UnityEngine;
-using UnityPen;
-using Object = System.Object;
-
+using Jint.Native; 
+using UnityEngine; 
 namespace UnityPen
 {
     public interface IType
