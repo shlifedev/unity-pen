@@ -250,12 +250,22 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: "let rotate = 0;\r\nlet speed = 1;\r\n\r\nfunction onStart() {\r\n   let
-    a = 20;\r\n   let b = 30;\r\n   Log(\"Hi I want a+b! \" , a + b);\r\n}\r\n\r\nfunction
-    onUpdate() { \r\n   rotate += Time.deltaTime * speed;\r\n   self.transform.rotation
-    = Quaternion.Euler(rotate*90, rotate*30, rotate*45);\r\n   self.transform.position
-    = new Vector3(Mathf.Sin(Time.realtimeSinceStartup * 2), 0, Mathf.Cos(Time.realtimeSinceStartup 
-    * 2));\r\n}"
+  m_Text: 'function onStart(){
+
+
+    }
+
+
+    function onUpdate(){
+
+
+    }
+
+    function
+    onChanged(){
+
+
+    }'
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -663,7 +673,6 @@ GameObject:
   - component: {fileID: 496786991}
   - component: {fileID: 496786993}
   - component: {fileID: 496786992}
-  - component: {fileID: 496786994}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -711,12 +720,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "let rotate = 0;\r\nlet speed = 1;\r\n\r\nfunction onStart() {\r\n   let
-    a = 20;\r\n   let b = 30;\r\n   Log(\"Hi I want a+b! \" , a + b);\r\n}\r\n\r\nfunction
-    onUpdate() { \r\n   rotate += Time.deltaTime * speed;\r\n   self.transform.rotation
-    = Quaternion.Euler(rotate*90, rotate*30, rotate*45);\r\n   self.transform.position
-    = new Vector3(Mathf.Sin(Time.realtimeSinceStartup * 2), 0, Mathf.Cos(Time.realtimeSinceStartup 
-    * 2));\r\n}\u200B"
+  m_text: "function onStart(){\n\n}\n\nfunction onUpdate(){\n\n}\nfunction onChanged(){\n\n}\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -793,19 +797,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496786990}
   m_CullTransparentMesh: 1
---- !u!114 &496786994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496786990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94b5b6e358ebaf4b8a3a9053384260b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  field: {fileID: 97090793}
 --- !u!1 &507133226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,7 +1286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224431128458639770, guid: 4d8c6c9fba0e46f489b21fd7d92d739d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 240
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 224431128458639770, guid: 4d8c6c9fba0e46f489b21fd7d92d739d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1711,7 +1702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224880000733725854, guid: d39ad26c554f1a04d870956f7fac6fd8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 240
+      value: 165
       objectReference: {fileID: 0}
     - target: {fileID: 224880000733725854, guid: d39ad26c554f1a04d870956f7fac6fd8, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1893,9 +1884,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05b13913f2f4d4ca139eb2c71451614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  code: "let rotate = 0;\r\nlet speed = 1;\r\n\r\nfunction onStart() {\r\n   let
-    a = 20;\r\n   let b = 30;\r\n   Log(\"Hi I want a+b! \" , a + b);\r\n}\r\n\r\nfunction
-    onUpdate() { \r\n   rotate += Time.deltaTime * speed;\r\n   self.transform.rotation
-    = Quaternion.Euler(rotate*90, rotate*30, rotate*45);\r\n   self.transform.position
-    = new Vector3(Mathf.Sin(Time.realtimeSinceStartup * 2), 0, Mathf.Cos(Time.realtimeSinceStartup 
-    * 2));\r\n}"
+  code: 

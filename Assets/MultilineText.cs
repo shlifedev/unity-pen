@@ -18,7 +18,7 @@ public class AstVisitorSyntaxHighlight : AstVisitor
             var n = node as VariableDeclaration; 
              
         }
-        Debug.Log($"{node.ChildNodes.Count} ${node.Type} ${node.Location.Start} ${node.Location.End} ${node.Range.Start} ${node.Range.End}");
+     //   Debug.Log($"{node.ChildNodes.Count} ${node.Type} ${node.Location.Start} ${node.Location.End} ${node.Range.Start} ${node.Range.End}");
     }
 }
 public class MultilineText : MonoBehaviour
@@ -37,12 +37,12 @@ public class MultilineText : MonoBehaviour
         sb = new StringBuilder(field.text); 
         UpdateSyntaxHighlight(); 
         field.onValueChanged.AddListener(x =>
-        {
-            
+        {  
             if(current != null)
                 StopCoroutine(current);
             current = StartCoroutine(this.Eval(x)); 
         });
+        GameObject.Find("TestCube").GetComponent<JavascriptBehaviour>().Eval(this.field.text);
     }
 
  
@@ -81,14 +81,5 @@ public class MultilineText : MonoBehaviour
         //     });
         // }
         //
-    }
- 
-    void Visit(Node node, Action<Node> func)
-    {
-        if (node == null) 
-            return;  
-        func?.Invoke(node);
-        foreach(var n in node.ChildNodes)
-            Visit(n, func);
     } 
 }
