@@ -376,7 +376,7 @@ namespace XLua.CSObjectWrap
             
                 ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
             
-             
+            
                 UnityEngine.Transform gen_to_be_invoked = (UnityEngine.Transform)translator.FastGetCSObj(L, 1);
             
             
